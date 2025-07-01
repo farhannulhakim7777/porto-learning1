@@ -199,7 +199,7 @@ section:last-child {
 }
 section h2 {
   color: #4f8ef7;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 18px;
   font-weight: 900;
   text-align: center;
@@ -553,7 +553,7 @@ footer {
     max-width: 340px;
   }
   section h2 {
-    font-size: 1rem;
+    font-size: 2rem;
     padding-left: 6px;
   }
   main {
