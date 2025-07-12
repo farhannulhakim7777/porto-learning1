@@ -344,61 +344,82 @@ ul {
 
 /* Project Section */
 .project-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  flex-wrap: wrap;
-  margin: auto;
-  justify-content: center;
-  padding: 20px;
+  display: grid; /* Menggunakan grid layout untuk mengatur item proyek */
+  grid-template-columns: repeat(2, 1fr); /* Membuat dua kolom dengan lebar yang sama */
+  gap: 20px; /* Jarak antar item proyek */
+  flex-wrap: wrap; /* Memungkinkan item proyek untuk pindah ke baris baru jika tidak cukup ruang */
+  margin: auto; /* Membuat margin otomatis agar daftar proyek berada di tengah */
+  justify-content: center; /* Membuat item proyek berada di tengah secara horizontal */
+  padding: 20px; /* Padding di sekitar daftar proyek */
 }
 
 .project-item {
-  background: #f4f7fb;
-  border-radius: 20px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
-  padding: 32px 24px 24px 24px;
-  text-align: center;
-  width: 420px;
-  transition: transform 0.2s, box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: #f4f7fb; /* Warna latar belakang item proyek */
+  border-radius: 20px; /* Membuat sudut item proyek menjadi bulat */
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09); /* Menambahkan bayangan pada item proyek */
+  padding: 32px 24px 24px 24px; /* Padding di dalam item proyek */
+  text-align: center; /* Membuat teks di dalam item proyek berada di tengah */
+  width: 420px; /* Lebar item proyek */
+  transition: transform 0.2s, box-shadow 0.3s; /* Transisi untuk efek hover */
+  display: flex; /* Menggunakan flexbox untuk mengatur tata letak item proyek */
+  flex-direction: column; /* Mengatur item proyek menjadi kolom */
+  align-items: center; /* Membuat item proyek berada di tengah secara vertikal */
 }
 
 .project-item:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 12px 36px rgba(79, 142, 247, 0.16);
+  transform: translateY(-10px) scale(1.05); /* Efek hover: item proyek sedikit naik dan membesar */
+  box-shadow: 0 12px 36px rgba(79, 142, 247, 0.16); /* Efek hover: mengubah bayangan item proyek */
 }
 
 .project-img {
-  width: 360px;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 4px solid #e0e7ef;
-  background: #fff;
-  margin-bottom: 20px;
-  box-shadow: 0 6px 20px rgba(79, 142, 247, 0.13);
-  transition: box-shadow 0.3s, border 0.3s;
+  width: 360px; /* Lebar gambar proyek */
+  height: 240px; /* Tinggi gambar proyek */
+  object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
+  border-radius: 18px; /* Membuat sudut gambar menjadi bulat */
+  border: 4px solid #e0e7ef; /* Menambahkan border pada gambar */
+  background: #fff; /* Warna latar belakang gambar */
+  margin-bottom: 20px; /* Margin bawah gambar */
+  box-shadow: 0 6px 20px rgba(79, 142, 247, 0.13); /* Menambahkan bayangan pada gambar */
+  transition: box-shadow 0.3s, border 0.3s; /* Transisi untuk efek hover */
+}
+.project-img1 {
+  width: 360px; /* Lebar gambar proyek */
+  height: 240px; /* Tinggi gambar proyek */
+  object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
+  border-radius: 18px; /* Membuat sudut gambar menjadi bulat */
+  border: 4px solid #e0e7ef; /* Menambahkan border pada gambar */
+  background: #fff; /* Warna latar belakang gambar */
+  margin-bottom: 20px; /* Margin bawah gambar */
+  box-shadow: 0 6px 20px rgba(79, 142, 247, 0.13); /* Menambahkan bayangan pada gambar */
+  transition: box-shadow 0.3s, border 0.3s; /* Transisi untuk efek hover */
+  display: block; /* Pastikan gambar menjadi elemen blok */
 }
 
 .project-item:hover .project-img {
-  box-shadow: 0 16px 40px rgba(79, 142, 247, 0.22);
-  border-color: #4f8ef7;
+  box-shadow: 0 16px 40px rgba(79, 142, 247, 0.22); /* Efek hover: mengubah bayangan gambar */
+  border-color: #4f8ef7; /* Efek hover: mengubah warna border gambar */
+}
+.project-item:hover .project-img1 {
+  box-shadow: 0 16px 40px rgba(79, 142, 247, 0.22); /* Efek hover: mengubah bayangan gambar */
+  border-color: #4f8ef7; /* Efek hover: mengubah warna border gambar */
 }
 
 /* Responsive Project Card */
 @media (max-width: 1100px) {
   .project-item {
-    width: 90vw;
-    max-width: 420px;
+    width: 90vw; /* Lebar item proyek menjadi 90% dari lebar viewport */
+    max-width: 420px; /* Lebar maksimum item proyek */
   }
 
   .project-img {
-    width: 90vw;
-    max-width: 360px;
-    height: 220px;
+    width: 90vw; /* Lebar gambar proyek menjadi 90% dari lebar viewport */
+    max-width: 360px; /* Lebar maksimum gambar proyek */
+    height: 220px; /* Tinggi gambar proyek */
+  }
+  .project-img1 {
+    width: 90vw; /* Lebar gambar proyek menjadi 90% dari lebar viewport */
+    max-width: 360px; /* Lebar maksimum gambar proyek */
+    height: 220px; /* Tinggi gambar proyek */
   }
 }
 
@@ -426,6 +447,14 @@ ul {
     max-height: 220px;
     border-radius: 16px;
   }
+  .project-img1 {
+    width: 100%;
+    max-width: 340px;
+    height: 48vw;
+    min-height: 140px;
+    max-height: 220px;
+    border-radius: 16px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -433,6 +462,14 @@ ul {
     padding: 0 4vw;
   }
   .project-img {
+    width: 96vw;
+    max-width: 96vw;
+    height: 56vw;
+    min-height: 120px;
+    max-height: 220px;
+    border-radius: 12px;
+  }
+  .project-img1 {
     width: 96vw;
     max-width: 96vw;
     height: 56vw;
