@@ -1,4 +1,6 @@
-/* Reset */
+/* ========================================================== */
+/* 1. FUTURISTIC THEME VARIABLES & GLOBAL RESET */
+/* ========================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,684 +11,1101 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  /* DARK MODE (Default) */
+  --color-bg-dark: #121212;
+  --color-bg-secondary-dark: #1e1e1e;
+  --color-text-dark: #eaeaea;
+  --color-accent: #0080ff; /* Electric Blue / Silver Blue */
+  --color-glass-dark: rgba(255, 255, 255, 0.08); /* White transparency */
+  --color-border-dark: rgba(255, 255, 255, 0.1);
+
+  /* LIGHT MODE */
+  --color-bg-light: #f0f0f0;
+  --color-bg-secondary-light: #ffffff;
+  --color-text-light: #222222;
+  --color-glass-light: rgba(0, 0, 0, 0.08); /* Black transparency */
+  --color-border-light: rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --font-heading: 'Russo One', sans-serif;
+  --font-primary: 'Inter', sans-serif;
+  --shadow-premium: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+  --shadow-accent: 0 0 15px var(--color-accent);
+}
+
+/* Base Body Styling based on theme */
+body[data-theme='dark'] {
+  background: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+body[data-theme='light'] {
+  background: var(--color-bg-light);
+  color: var(--color-text-light);
+  /* Override accent for Light Mode readability */
+  --color-accent: #1a73e8;
+}
+
 body {
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-  background: #f8fafc;
-  color: #22223b;
+  font-family: var(--font-primary);
   line-height: 1.7;
   font-size: 16px;
+  transition: background 0.5s, color 0.5s;
 }
 
-.container {
-  max-width: 900px;
+/* Glassmorphism Effect */
+.glassmorphism {
+  background: var(--color-glass-dark);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border-dark);
+  box-shadow: var(--shadow-premium);
+  transition: all 0.5s;
+}
+body[data-theme='light'] .glassmorphism {
+  background: var(--color-glass-light);
+  border: 1px solid var(--color-border-light);
+}
+
+.glassmorphism-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ========================================================== */
+/* 2. GLOBAL ELEMENTS */
+/* ========================================================== */
+main {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
+}
+section {
+  margin-bottom: 120px;
+  padding: 60px 0 20px; /* Padding atas agar tidak tertutup nav bar */
+}
+section:nth-child(even) {
+  background: var(--color-bg-secondary-dark);
+}
+body[data-theme='light'] section:nth-child(even) {
+  background: var(--color-bg-secondary-light);
 }
 
-/* Navigation */
-nav {
-  background: #22223b;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+/* Section Headings (H2) */
+section h2 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 400; /* Russo One is naturally heavy */
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--color-text-dark);
+}
+body[data-theme='light'] section h2 {
+  color: var(--color-text-light);
+}
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  margin: 15px auto 50px;
+  box-shadow: var(--shadow-accent);
+}
+.section-subtitle {
+  text-align: center;
+  color: #999;
+  font-size: 1.1rem;
+  margin-bottom: 60px;
+}
+
+/* Buttons (CTA) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-bg-dark);
+  border-color: var(--color-accent);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn i {
+  margin-left: 10px;
+  font-size: 1.1rem;
+}
+
+.btn-primary:hover {
+  background: var(--color-bg-dark);
+  color: var(--color-accent);
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-5px);
+}
+.btn-secondary:hover {
+  background: var(--color-accent);
+  color: var(--color-bg-dark);
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-5px);
+}
+body[data-theme='light'] .btn-primary:hover {
+  background: var(--color-bg-light);
+  color: var(--color-accent);
+}
+body[data-theme='light'] .btn-secondary:hover {
+  background: var(--color-accent);
+  color: var(--color-bg-light);
+}
+
+.btn-sm {
+  /* Untuk Tombol di Card */
+  font-size: 0.9rem;
+  padding: 8px 18px;
+  margin-top: 15px;
+}
+.link-detail {
+  display: inline-block;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 2px;
+  transition: color 0.3s;
+}
+.link-detail:hover {
+  color: #fff;
+  border-color: #fff;
+}
+body[data-theme='light'] .link-detail:hover {
+  color: var(--color-text-light);
+  border-color: var(--color-text-light);
+}
+
+/* ========================================================== */
+/* 3. NAVIGATION & AI BUBBLE */
+/* ========================================================== */
+.navbar {
+  background: var(--color-bg-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+}
+body[data-theme='light'] .navbar {
+  background: var(--color-bg-secondary-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: var(--font-heading);
 }
 
 nav ul {
   display: flex;
-  justify-content: center;
-  gap: 36px;
   list-style: none;
-  padding: 18px 0;
+  gap: 30px;
 }
 
 nav a {
-  color: #f8fafc;
+  color: var(--color-text-dark);
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  position: relative;
+  font-weight: 500;
   transition: color 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
-nav a::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #4f8ef7;
-  transition: width 0.3s;
-  position: absolute;
-  left: 0;
-  bottom: -4px;
+body[data-theme='light'] nav a {
+  color: var(--color-text-light);
 }
-
 nav a:hover,
-nav a:focus {
-  color: #4f8ef7;
+nav a.active {
+  color: var(--color-accent);
 }
 
-nav a:hover::after,
-nav a:focus::after {
-  width: 100%;
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
-
-/* Hamburger Button */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 36px;
-  height: 36px;
-  background: none;
+.icon-btn {
+  background: transparent;
   border: none;
+  color: var(--color-text-dark);
+  font-size: 1.2rem;
   cursor: pointer;
-  margin-left: 12px;
-  z-index: 200;
+  transition: color 0.3s;
+}
+body[data-theme='light'] .icon-btn {
+  color: var(--color-text-light);
+}
+.icon-btn:hover {
+  color: var(--color-accent);
 }
 
-.nav-toggle .bar {
-  width: 100%;
-  height: 4px;
-  background: #22223b;
-  border-radius: 2px;
-  transition: all 0.3s;
+/* Hamburger menu (same as before, but with color variable) */
+.nav-toggle {
+  display: none; /* Hide on desktop */
 }
 
-.nav-toggle.active .bar:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+/* AI Assistant Bubble */
+.ai-bubble {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-accent);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.ai-bubble:hover {
+  transform: scale(1.05);
+}
+.ai-bubble i {
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
+.ai-bubble p {
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
-.nav-toggle.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle.active .bar:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-/* Responsive Navigation */
-@media (max-width: 700px) {
-  .nav-toggle {
-    display: flex;
-    position: absolute;
-    right: 18px;
-    top: 18px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0;
-    background: #22223b;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 180px;
-    padding: 16px 0;
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
-    display: none;
-    z-index: 150;
-  }
-
-  nav ul.nav-open {
-    display: flex;
-  }
-
-  nav ul li {
-    text-align: right;
-    padding: 10px 24px;
-  }
-}
-
-/* Header: Desain profesional dengan foto di atas dan teks di bawah */
-header {
-  background: linear-gradient(180deg, #22223b 0%, #4f8ef7 100%);
-  color: #fff;
-  padding: 60px 20px;
+/* ========================================================== */
+/* 4. HERO SECTION */
+/* ========================================================== */
+.hero-section {
+  padding: 120px 20px 80px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.full-height {
+  min-height: calc(100vh - 80px); /* Adjust based on nav height */
 }
 
-/* Foto profil di bagian atas */
-.header-top img {
-  width: 300px;
-  height: 300px;
+.profile-img {
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   border-radius: 50%;
-  border: 6px solid #fff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
-  transition: 0.3s ease;
-}
-
-.header-top img:hover {
-  transform: scale(1.05);
-  border-color: #4f8ef7;
-}
-
-/* Teks nama dan deskripsi */
-.header-bottom h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-  color: #fff;
-}
-
-.header-bottom p {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-  color: #dbeafe;
-}
-
-/* Responsive tweak untuk HP */
-@media (max-width: 768px) {
-  .header-bottom h1 {
-    font-size: 2rem;
-  }
-
-  .header-top img {
-    width: 160px;
-    height: 160px;
-  }
-}
-
-
-/* Main Content */
-main {
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.07);
-  margin: 40px auto;
-  padding: 40px 0 30px 0;
-  max-width: 900px;
-}
-
-section {
   margin-bottom: 40px;
-  padding: 0 24px;
+  border: 3px solid var(--color-accent);
+  box-shadow: var(--shadow-accent);
 }
 
-section:last-child {
-  margin-bottom: 0;
+.greeting {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #aaa;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
-section h2 {
-  color: #4f8ef7;
-  font-size: 2rem;
-  margin-bottom: 18px;
-  font-weight: 900;
+.hero-content h1 {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: -3px;
+  margin-bottom: 25px;
+  line-height: 1;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0 auto 50px;
+  padding: 15px 30px;
+  max-width: 650px;
+}
+.tagline strong {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.hero-actions {
+  margin-bottom: 40px;
+}
+
+.social-links a {
+  color: var(--color-text-dark);
+  font-size: 1.8rem;
+  margin: 0 15px;
+  transition: color 0.3s, transform 0.3s;
+}
+body[data-theme='light'] .social-links a {
+  color: var(--color-text-light);
+}
+.social-links a:hover {
+  color: var(--color-accent);
+  transform: scale(1.1);
+}
+
+/* ========================================================== */
+/* 5. ABOUT ME & BRANDING SECTIONS */
+/* ========================================================== */
+.content-wrapper {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.about-text {
+  flex: 2;
+  padding-right: 20px;
+}
+
+.video-placeholder {
+  flex: 1;
   text-align: center;
-  border-left: none;
-  padding-left: 0;
-  letter-spacing: 1px;
+}
+.video-label {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #aaa;
+}
+.video-box {
+  height: 200px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px dashed var(--color-accent);
+}
+.video-box i {
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: 10px;
 }
 
-@media (max-width: 700px) {
-  section h2 {
-    font-size: 2.4rem;
-    padding-left: 0;
-  }
+/* Branding Grid */
+.branding-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.branding-card {
+  flex: 1;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.branding-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-accent);
+}
+.branding-card i {
+  font-size: 2.5rem;
+  color: var(--color-accent);
+  margin-bottom: 15px;
+}
+.branding-card h3 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-@media (max-width: 400px) {
-  section h2 {
-    font-size: 2rem;
-  }
+/* ========================================================== */
+/* 6. SKILLS SECTION (BAR MODERN) */
+/* ========================================================== */
+.skills-matrix {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.skill-category {
+  flex: 1;
+  padding: 30px;
+  border-radius: 12px;
+}
+.skill-category h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  color: var(--color-accent);
+}
+.skill-item {
+  margin-bottom: 20px;
+}
+.skill-item p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background: var(--color-bg-secondary-dark);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+body[data-theme='light'] .skill-bar {
+  background: #e0e0e0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.skill-bar div {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 5px;
+  transition: width 1s ease-out; /* Animasi bar */
+  box-shadow: 0 0 8px var(--color-accent);
 }
 
-section p,
-section ul {
-  font-size: 1.08rem;
-  color: #22223b;
+/* ========================================================== */
+/* 7. PROJECTS SHOWCASE (GRID HOVER INTERACTIVE) */
+/* ========================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), var(--shadow-accent);
 }
 
-ul {
-  padding-left: 22px;
+.project-preview-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(80%); /* Filter untuk kesan elegan */
+  transition: filter 0.5s;
+}
+.project-card:hover .project-preview-img {
+  filter: grayscale(0%); /* Warna muncul saat hover */
+}
+
+.card-content {
+  padding: 20px;
+}
+.card-content h3 {
+  font-family: var(--font-primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.card-content p {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+.tags {
+  margin-bottom: 10px;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 4px;
+  background: var(--color-accent);
+  color: var(--color-bg-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ========================================================== */
+/* 8. EXPERIENCE (TIMELINE FUTURISTIK) */
+/* ========================================================== */
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: var(--color-accent);
+  box-shadow: 0 0 5px var(--color-accent);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-item {
+  padding: 10px 0;
+  position: relative;
+  width: 50%;
+}
+.timeline-item:nth-child(odd) {
+  left: 0;
+  padding-right: 30px;
+  text-align: right;
+}
+.timeline-item:nth-child(even) {
+  left: 50%;
+  padding-left: 30px;
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--color-bg-dark); /* Diisi dengan warna background utama */
+  border: 3px solid var(--color-accent);
+  top: 25px;
+  z-index: 1;
+}
+body[data-theme='light'] .timeline-dot {
+  background: var(--color-bg-light);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+  right: -7.5px;
+}
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -7.5px;
+}
+
+.timeline-content {
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  transition: transform 0.3s;
+}
+.timeline-content:hover {
+  transform: scale(1.03);
+  border-color: var(--color-accent);
+}
+.timeline-content .date {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 5px;
+}
+.timeline-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* ========================================================== */
+/* 9. CONTACT SECTION */
+/* ========================================================== */
+.contact-grid {
+    display: flex;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.contact-form {
+  flex: 2;
+  padding: 40px;
+  border-radius: 12px;
+}
+.contact-form h3 {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: var(--color-accent);
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: var(--color-bg-secondary-dark);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 4px;
+  color: var(--color-text-dark);
+  font-family: var(--font-primary);
+  transition: border-color 0.3s;
+}
+body[data-theme='light'] .contact-form input,
+body[data-theme='light'] .contact-form textarea {
+  background: var(--color-bg-secondary-light);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-light);
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 5px var(--color-accent);
+}
+
+.contact-info {
+    flex: 1;
+    padding: 40px 0;
+    /* Tambahkan atau ubah properti ini untuk centring */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Memastikan konten vertikal di tengah */
+    align-items: center;     /* Memastikan konten horizontal di tengah */
+    text-align: center;      /* Memastikan teks di tengah */
+}
+.contact-info h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: var(--color-accent);
 }
 
 .contact-list {
-  list-style: none;
-  padding-left: 0;
+    list-style: none;
+    margin-bottom: 30px;
+    /* Hilangkan lebar agar list mengikuti konten di tengah */
+    padding: 0; 
 }
-
 .contact-list li {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
+    margin-bottom: 15px;
+    text-align: left; /* Teks dalam list dikembalikan ke kiri */
+    width: 100%;      /* Biarkan lebar sesuai isi */
 }
-
 .contact-list i {
+  color: var(--color-accent);
   margin-right: 10px;
-  color: #4f8ef7;
-  font-size: 1.2rem;
 }
-
 .contact-list a {
-  color: #22223b;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.contact-list a:hover {
-  color: #4f8ef7;
-}
-
-/* --- Styling Tambahan untuk Home Section --- */
-#home .intro {
-  background-color: #f8f9fd;
-  border-radius: 12px;
-  padding: 20px 24px;
-  margin-bottom: 20px;
-  line-height: 1.6;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-}
-
-#home .intro p {
-  margin-bottom: 12px;
-}
-
-#home .home-reference ul {
-  list-style-type: square;
-  padding-left: 24px;
-}
-
-#home .home-reference li {
-  margin-bottom: 10px;
-}
-
-#home .home-reference a {
-  color: #4f8ef7;
+  color: var(--color-text-dark);
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.2s ease;
+}
+body[data-theme='light'] .contact-list a {
+  color: var(--color-text-light);
+}
+.contact-list a:hover {
+  color: var(--color-accent);
 }
 
-#home .home-reference a:hover {
-  text-decoration: underline;
-  color: #2c5dd8;
+.social-links-footer a {
+  font-size: 1.5rem;
+  margin-right: 20px;
 }
-
-/* Foto Profil di Header */
-.profile-img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 5px solid #4f8ef7;
-  box-shadow: 0 4px 24px rgba(79, 142, 247, 0.15), 0 1.5px 8px rgba(0, 0, 0, 0.07);
-  margin-bottom: 22px;
-  background: #fff;
-  transition: box-shadow 0.3s, border 0.3s;
-}
-
-.profile-img:hover {
-  box-shadow: 0 8px 32px rgba(79, 142, 247, 0.22), 0 2px 12px rgba(0, 0, 0, 0.10);
-  border-color: #22223b;
-}
-
-/* Foto About */
-.about-img {
-  width: 110px;
-  height: 110px;
-  border-radius: 18px;
-  object-fit: cover;
-  box-shadow: 0 2px 12px rgba(79, 142, 247, 0.10);
-  border: 3px solid #e0e7ef;
-  background: #fff;
-  transition: box-shadow 0.3s, border 0.3s;
-}
-
-.about-img:hover {
-  box-shadow: 0 6px 24px rgba(79, 142, 247, 0.18);
-  border-color: #4f8ef7;
-}
-
-/* Project Section */
-.project-list {
-  display: grid; /* Menggunakan grid layout untuk mengatur item proyek */
-  grid-template-columns: repeat(2, 1fr); /* Membuat dua kolom dengan lebar yang sama */
-  gap: 20px; /* Jarak antar item proyek */
-  flex-wrap: wrap; /* Memungkinkan item proyek untuk pindah ke baris baru jika tidak cukup ruang */
-  margin: auto; /* Membuat margin otomatis agar daftar proyek berada di tengah */
-  justify-content: center; /* Membuat item proyek berada di tengah secara horizontal */
-  padding: 20px; /* Padding di sekitar daftar proyek */
-}
-
-.project-item {
-  background: #f4f7fb; /* Warna latar belakang item proyek */
-  border-radius: 20px; /* Membuat sudut item proyek menjadi bulat */
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09); /* Menambahkan bayangan pada item proyek */
-  padding: 32px 24px 24px 24px; /* Padding di dalam item proyek */
-  text-align: center; /* Membuat teks di dalam item proyek berada di tengah */
-  width: 420px; /* Lebar item proyek */
-  transition: transform 0.2s, box-shadow 0.3s; /* Transisi untuk efek hover */
-  display: flex; /* Menggunakan flexbox untuk mengatur tata letak item proyek */
-  flex-direction: column; /* Mengatur item proyek menjadi kolom */
-  align-items: center; /* Membuat item proyek berada di tengah secara vertikal */
-}
-
-.project-item:hover {
-  transform: translateY(-10px) scale(1.05); /* Efek hover: item proyek sedikit naik dan membesar */
-  box-shadow: 0 12px 36px rgba(79, 142, 247, 0.16); /* Efek hover: mengubah bayangan item proyek */
-}
-
-.project-img {
-  width: 360px; /* Lebar gambar proyek */
-  height: 240px; /* Tinggi gambar proyek */
-  object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
-  border-radius: 18px; /* Membuat sudut gambar menjadi bulat */
-  border: 4px solid #e0e7ef; /* Menambahkan border pada gambar */
-  background: #fff; /* Warna latar belakang gambar */
-  margin-bottom: 20px; /* Margin bawah gambar */
-  box-shadow: 0 6px 20px rgba(79, 142, 247, 0.13); /* Menambahkan bayangan pada gambar */
-  transition: box-shadow 0.3s, border 0.3s; /* Transisi untuk efek hover */
-}
-.project-img1 {
-  width: 360px; /* Lebar gambar proyek */
-  height: 240px; /* Tinggi gambar proyek */
-  object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
-  border-radius: 18px; /* Membuat sudut gambar menjadi bulat */
-  border: 4px solid #e0e7ef; /* Menambahkan border pada gambar */
-  background: #fff; /* Warna latar belakang gambar */
-  margin-bottom: 20px; /* Margin bawah gambar */
-  box-shadow: 0 6px 20px rgba(79, 142, 247, 0.13); /* Menambahkan bayangan pada gambar */
-  transition: box-shadow 0.3s, border 0.3s; /* Transisi untuk efek hover */
-  display: block; /* Pastikan gambar menjadi elemen blok */
-}
-
-.project-item:hover .project-img {
-  box-shadow: 0 16px 40px rgba(79, 142, 247, 0.22); /* Efek hover: mengubah bayangan gambar */
-  border-color: #4f8ef7; /* Efek hover: mengubah warna border gambar */
-}
-.project-item:hover .project-img1 {
-  box-shadow: 0 16px 40px rgba(79, 142, 247, 0.22); /* Efek hover: mengubah bayangan gambar */
-  border-color: #4f8ef7; /* Efek hover: mengubah warna border gambar */
-}
-
-/* Responsive Project Card */
-@media (max-width: 1100px) {
-  .project-item {
-    width: 90vw; /* Lebar item proyek menjadi 90% dari lebar viewport */
-    max-width: 420px; /* Lebar maksimum item proyek */
-  }
-
-  .project-img {
-    width: 90vw; /* Lebar gambar proyek menjadi 90% dari lebar viewport */
-    max-width: 360px; /* Lebar maksimum gambar proyek */
-    height: 220px; /* Tinggi gambar proyek */
-  }
-  .project-img1 {
-    width: 90vw; /* Lebar gambar proyek menjadi 90% dari lebar viewport */
-    max-width: 360px; /* Lebar maksimum gambar proyek */
-    height: 220px; /* Tinggi gambar proyek */
-  }
-}
-
-@media (max-width: 700px) {
-  .project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 10vw;
-    align-items: center;
-
-  }
-
-  .project-item {
-    width: 100%;
-    max-width: 380px;
-    padding: 16px 10px 12px 10px;
-  }
-
-  .project-img {
-    width: 100%;
-    max-width: 340px;
-    height: 48vw;
-    min-height: 140px;
-    max-height: 220px;
-    border-radius: 16px;
-  }
-  .project-img1 {
-    width: 100%;
-    max-width: 340px;
-    height: 48vw;
-    min-height: 140px;
-    max-height: 220px;
-    border-radius: 16px;
-  }
-}
-
-@media (max-width: 400px) {
-  .project-list {
-    padding: 0 4vw;
-  }
-  .project-img {
-    width: 96vw;
-    max-width: 96vw;
-    height: 56vw;
-    min-height: 120px;
-    max-height: 220px;
-    border-radius: 12px;
-  }
-  .project-img1 {
-    width: 96vw;
-    max-width: 96vw;
-    height: 56vw;
-    min-height: 120px;
-    max-height: 220px;
-    border-radius: 12px;
-  }
-
-  .project-item {
-   padding: 10px 2vw;
-   max-width: 98vw;
-  }
-}
-
-/* Gallery Foto di Home */
-.about-gallery {
-  display: flex;
-  gap: 32px;
-  margin-top: 28px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.about-photo {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(79, 142, 247, 0.10);
-  padding: 18px 14px 14px 14px;
-  width: 220px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: box-shadow 0.3s;
-}
-
-.about-photo:hover {
-  box-shadow: 0 8px 32px rgba(79, 142, 247, 0.18);
-}
-
-.about-photo img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 14px;
-  border: 3px solid #e0e7ef;
-  background: #f8fafc;
-  transition: border 0.3s;
-}
-
-.about-photo img:hover {
-  border: 3px solid #4f8ef7;
-}
-
-.about-photo p {
-  font-size: 1rem;
-  color: #22223b;
-  text-align: center;
-  margin: 0;
-}
-
-/* Footer */
 footer {
   text-align: center;
-  padding: 22px 0;
-  background: #22223b;
-  color: #f8fafc;
-  font-size: 1rem;
-  margin-top: 40px;
-  border-radius: 0 0 14px 14px;
+  padding: 30px 0;
+  background: var(--color-bg-secondary-dark);
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 50px;
+}
+body[data-theme='light'] footer {
+  background: var(--color-bg-secondary-light);
+}
+.social-links-footer {
+    display: flex;
+    justify-content: center; /* Memastikan ikon di tengah */
+    gap: 15px; /* Memberi jarak antar ikon */
+} 
+.social-links-footer a {
+    font-size: 1.5rem;
+    color: var(--color-text-dark); /* Menggunakan warna dark mode default */
+}
+body[data-theme="light"] .social-links-footer a {
+    color: var(--color-text-light); /* Menggunakan warna light mode */
+}
+.social-links-footer a:hover {
+    color: var(--color-accent);
 }
 
-/* Home Reference Box */
-.home-reference {
-  margin-top: 24px;
-  background: #f4f7fb;
-  border-radius: 14px;
-  padding: 18px 20px;
-  box-shadow: 0 2px 12px rgba(79, 142, 247, 0.07);
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+
+/* ========================================================== */
+/* 11. RESPONSIVE STYLES (MOBILE FIRST & OPTIMAL) */
+/* ========================================================== */
+
+/* --- 11.1 TABLET & LAYAR LEBAR (Max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    /* ... (Aturan Hero, Heading, Timeline, dll. biarkan seperti sebelumnya) ... */
+
+    /* Contact Section: Stack menjadi satu kolom */
+    .contact-grid {
+        flex-direction: column;
+        gap: 20px;
+        /* [PENTING] Memastikan grid mengambil seluruh lebar */
+        width: 100%;
+    }
+    .contact-form {
+        padding: 30px;
+        order: 2; /* Form di bawah */
+        flex: 1; /* Ambil seluruh lebar */
+    }
+    .contact-info {
+        padding: 20px 0;
+        order: 1; /* Info di atas */
+        flex: 1; /* Ambil seluruh lebar */
+        /* Pastikan Contact Info tetap centered di Tablet/Mobile */
+        align-items: center;
+        text-align: center;
+    }
+    
+    /* Timeline: Ubah menjadi satu kolom */
+    .timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
 }
-
-.home-reference h3 {
-  color: #4f8ef7;
-  font-size: 1.15rem;
-  margin-bottom: 12px;
-  text-align: left;
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--color-accent);
+    box-shadow: 0 0 5px var(--color-accent);
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Default di tengah untuk Desktop */
+    margin-left: -1px;
 }
+/* ... (Aturan lain untuk timeline-item:nth-child(odd/even) biarkan seperti semula) ... */
 
-.home-reference ul {
-  list-style: disc inside;
-  padding-left: 0;
-}
-
-.home-reference li {
-  margin-bottom: 8px;
-}
-
-.home-reference a {
-  color: #22223b;
-  text-decoration: none;
-  transition: color 0.2s;
-  font-weight: 500;
-}
-
-.home-reference a:hover {
-  color: #4f8ef7;
-  text-decoration: underline;
-}
-
-/* Responsive for all devices */
-@media (max-width: 1000px) {
-
-  .container,
-  main {
-    max-width: 98vw;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .project-list {
-    gap: 18px;
-  }
-
-  .project-item {
-    width: 45vw;
-    min-width: 160px;
-    max-width: 220px;
-  }
-}
-
-@media (max-width: 700px) {
-
-  .container,
-  main,
-  section {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
+/* [KRITIS] Aturan timeline-item di Desktop agar tidak konflik di Mobile */
+.timeline-item {
     padding: 10px 0;
-  }
-
-  header {
-    padding: 40px 0 24px 0;
-  }
-
-  header h1 {
-    font-size: 1.4rem;
-  }
-
-  .profile-img {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 14px;
-  }
-
-  .about-wrapper {
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-  }
-
-  .about-img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .project-list {
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-  }
-
-  .project-item {
-    width: 90vw;
-    max-width: 340px;
-  }
-
-  section h2 {
-    font-size: 2rem;
-    padding-left: 6px;
-  }
-
-  main {
-    padding: 12px 0 8px 0;
-  }
-
-  footer {
-    font-size: 0.9rem;
-    padding: 10px 0;
-  }
+    position: relative;
+    width: 50%;
+}
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 30px;
+    text-align: right;
+}
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 30px;
+}
 }
 
-/* Extra small devices */
-@media (max-width: 400px) {
-  header {
-    padding: 24px 0 12px 0;
-  }
 
-  .profile-img {
-    width: 48px;
-    height: 48px;
-  }
+/* --- 11.2 MOBILE (Max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* Navigation Bar */
+    .navbar {
+        padding: 15px 20px;
+    }
+    nav ul {
+        display: none;
+    }
+    
+    /* Hamburger Menu Toggle (Tetap seperti sebelumnya) */
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 30px;
+        height: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .nav-toggle .bar {
+        width: 100%;
+        height: 3px;
+        background: var(--color-text-dark);
+        border-radius: 2px;
+        transition: all 0.3s;
+    }
+    body[data-theme='light'] .nav-toggle .bar {
+        background: var(--color-text-light);
+    }
+    .nav-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 
-  .about-img {
-    width: 36px;
-    height: 36px;
-  }
+    /* Nav Menu Open */
+    nav ul.nav-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--color-bg-dark);
+        width: 100%;
+        max-width: 250px;
+        padding: 20px;
+        box-shadow: var(--shadow-premium);
+        border-radius: 0 0 8px 8px;
+    }
+    body[data-theme='light'] nav ul.nav-open {
+        background: var(--color-bg-light);
+    }
+    nav ul.nav-open li {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--color-border-dark);
+    }
+    body[data-theme='light'] nav ul.nav-open li {
+        border-bottom: 1px solid var(--color-border-light);
+    }
 
-  .project-img {
-    height: 48px;
-    border-radius: 7px;
-  }
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    .tagline {
+        font-size: 1.2rem;
+        padding: 15px;
+        max-width: 90%;
+    }
+    .profile-img {
+        width: 160px; /* Sedikit lebih kecil */
+        height: 160px;
+    }
+    .hero-actions .btn {
+        margin: 10px 5px; /* Jarak tombol diperkecil */
+        padding: 12px 25px;
+    }
+    
+    /* Global Section Layouts: Stack semua grid menjadi satu kolom */
+    .content-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .video-placeholder {
+        margin-top: 20px;
+    }
+    .branding-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .skills-matrix {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .project-card {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+}
+
+
+/* --- 11.3 PURE MOBILE (Max-width: 480px) - Fokus ke Layar Terkecil --- */
+@media (max-width: 480px) {
+    /* Judul Section */
+    section h2 {
+        font-size: 2.5rem;
+    }
+    .timeline-content {
+        max-width: 100%; /* Ambil lebar penuh yang tersisa dari 60px padding */
+        padding: 10px;  /* Padding yang lebih kecil */
+    }
+    .section-subtitle {
+        margin-bottom: 40px;
+    }
+
+    /* Hero Section: Font dan Tombol Stack */
+    .hero-content h1 {
+        font-size: 2.5rem; /* Paling kecil untuk layar 480px */
+    }
+    .tagline {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .hero-actions {
+        display: flex;
+        flex-direction: column; /* Tombol ditumpuk vertikal */
+        gap: 15px;
+    }
+    .hero-actions .btn {
+        width: 90%; /* Tombol mengambil hampir seluruh lebar */
+        margin: 0 auto;
+    }
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    /* Contact Section (Tambahan dari Request Sebelumnya) */
+    .contact-form {
+        padding: 20px;
+    }
+
+    /* AI Bubble: Lebih kecil dan hanya ikon */
+    .ai-bubble {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 10px;
+    }
+    .ai-bubble p {
+        display: none; /* Sembunyikan teks "AI Assistant is online" */
+    }
+}
+@media (max-width: 360px) {
+    /* Global Padding */
+    main {
+        padding: 0 10px; /* Kurangi padding utama agar ada lebih banyak ruang konten */
+    }
+
+    /* Navbar/Header */
+    .navbar {
+        padding: 15px 10px; /* Kurangi padding Navbar */
+    }
+    .logo {
+        font-size: 1.2rem; /* Logo lebih kecil */
+    }
+
+    /* Judul Section (H2) */
+    section h2 {
+        font-size: 2rem; /* Judul section dibuat lebih kecil */
+    }
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2rem; /* Judul Hero (nama) dibuat sangat kecil */
+    }
+    .tagline {
+        font-size: 0.9rem;
+        padding: 8px; /* Padding tagline dikurangi */
+    }
+    .profile-img {
+        width: 120px; /* Foto profil lebih kecil */
+        height: 120px;
+        margin-bottom: 20px;
+    }
+    /* Tombol hero sudah diatur di 480px, biarkan saja */
+
+    /* Experience/Timeline */
+    .timeline-item {
+        padding-left: 50px; /* Kurangi sedikit padding untuk konten timeline */
+    }
+    .timeline::before {
+        left: 20px; /* Garis timeline geser sedikit ke kiri */
+    }
+    .timeline-dot {
+        left: 13px !important; /* Posisikan dot agar pas di garis baru */
+    }
+    .timeline-content {
+        padding: 8px; /* Padding kotak konten dibuat lebih minimal */
+        font-size: 0.9rem;
+    }
+    
+    /* Contact Form & Info */
+    .contact-form,
+    .contact-info {
+        padding: 15px; /* Padding Form dan Info Kontak dikurangi */
+    }
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+    }
+    .contact-list li {
+        font-size: 0.95rem; /* Teks list kontak lebih kecil */
+    }
+    .social-links-footer a {
+        font-size: 1.3rem; /* Ikon sosial lebih kecil */
+    }
+
+    /* Project Cards & Branding */
+    .project-card,
+    .branding-card {
+        padding: 20px;
+    }
+    .project-card h3,
+    .branding-card h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ========================================================== */
+/* 11.3.5 MID-MOBILE ADJUSTMENT (Max-width: 420px) */
+/* ========================================================== */
+@media (max-width: 420px) {
+    /* Judul Section */
+    section h2 {
+        font-size: 2.2rem; /* Sedikit lebih kecil dari 2.5rem */
+    }
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.8rem; /* Lebih halus dari 3.5rem (768px) dan 2.5rem (480px) */
+    }
+    .tagline {
+        font-size: 0.95rem; /* Teks deskripsi lebih ringkas */
+    }
+    .profile-img {
+        width: 130px; /* Foto profil sedikit lebih kecil */
+        height: 130px;
+    }
+    
+    /* Project & Branding Cards */
+    .project-card, 
+    .branding-card {
+        padding: 20px; /* Kurangi padding agar konten punya ruang */
+    }
+    
+    /* Experience/Timeline */
+    .timeline-content {
+        padding: 10px; /* Pastikan padding konten minimal */
+        font-size: 0.95rem; /* Teks timeline sedikit lebih kecil */
+    }
+    
+    /* Contact Form & Info */
+    .contact-form,
+    .contact-info {
+        padding: 15px;
+    }
+    .contact-list li {
+        font-size: 0.95rem;
+    }
+    
+    /* Tombol CTA di Hero Section akan tetap stack (berbaris vertikal) seperti di 480px */
+    .hero-actions .btn {
+        padding: 10px 20px; /* Padding tombol sedikit dikurangi */
+    }
 }

@@ -1,207 +1,298 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio Farhan</title>
+  <title>Farhan Nul Hakim | Executive Futurism Portfolio 2025</title>
   <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Russo+One&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
-  <!-- Navigasi -->
-  <!-- Navigasi Website -->
-  <nav>
-    <!-- Tombol navigasi untuk tampilan mobile (hamburger menu) -->
-    <button class="nav-toggle" aria-label="Toggle navigation">
-      <span class="bar"></span> <!-- Garis 1 hamburger -->
-      <span class="bar"></span> <!-- Garis 2 hamburger -->
-      <span class="bar"></span> <!-- Garis 3 hamburger -->
-    </button>
-    <!-- Daftar menu navigasi ke setiap section halaman -->
+<body data-theme="dark">
+
+  <nav class="navbar">
+    <a href="#hero" class="logo">FARHAN.</a>
+    <div class="nav-controls">
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle dark/light mode">
+        <i class="fas fa-sun"></i>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
     <ul>
-      <li><a href="#home">Home</a></li> <!-- Link ke Home -->
-      <li><a href="#about">About</a></li> <!-- Link ke About -->
-      <li><a href="#project1">Project</a></li><!-- Link ke Project -->
-      <li><a href="#project">Certification</a></li> <!-- Link ke Certif -->
-      <li><a href="#contact">Contact</a></li> <!-- Link ke Contact -->
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#branding">Branding</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact" class="cta-link">Connect</a></li>
     </ul>
   </nav>
 
-  <!-- Header bagian atas halaman -->
-  <header>
-    <div class="header-top">
-      <!-- Gambar profil atau banner -->
-      <img src="/img/headerpict.png" alt="Foto Farhan" />
-    </div>
-    <div class="header-bottom">
-      <h1>Hi, I'm Farhan Nul Hakim</h1> <!-- Nama utama -->
-      <p>Informatics Engineering Student</p> <!-- Deskripsi singkat -->
-      <p>Front-End Developer (HTML, CSS, JavaScript)</p> <!-- Keahlian utama -->
-      <p>Finance & Marketing Administrator</p> <!-- Keahlian tambahan -->
-      <p>Skilled in Microsoft Excel (Reporting, Formulas, Financial Records)</p> <!-- Keahlian tambahan -->
-    </div>
-  </header>
-
   <main>
-    <!-- Section Home: daftar referensi belajar -->
-    <section id="home">
-      <h2>Home</h2> <!-- Judul section Home -->
-      <div class="intro">
-        <p>Hello! I'm <strong>Farhan Nul Hakim</strong>, an Informatics Engineering student with a passion for front-end
-          development and finance administration. I enjoy crafting user-friendly web interfaces using HTML, CSS, and
-          JavaScript. I'm also experienced in handling financial records and administrative tasks using tools like
-          Microsoft Excel.</p>
-        <p>Outside of work, I constantly seek to improve my skills through online learning platforms. Here are some of
-          my favorite resources:</p>
+    <section id="hero" class="hero-section full-height">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+        <img src="/img/headerpict.png" alt="Farhan Nul Hakim Profile Picture" class="profile-img glassmorphism" />
+        <p class="greeting">FUTURE-FORWARD</p>
+        <h1>FARHAN NUL HAKIM.</h1>
+        <p class="tagline glassmorphism">
+          Front-End Visionary & Financial Administrator. Driving digital transformation with precision and
+          executive insight.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">HIRE ME <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#projects" class="btn btn-secondary">VIEW PROJECTS</a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/farhannul-hakim/" target="_blank" aria-label="LinkedIn"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/farhannulhakim7777" target="_blank" aria-label="GitHub"><i
+              class="fab fa-github"></i></a>
+          <a href="https://instagram.com/farhannl_" target="_blank" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
+        </div>
       </div>
-      <div class="home-reference">
-        <h3>Learning Resources I Recommend:</h3>
-        <ul>
-          <li>
-            <a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3Schools – HTML, CSS, JS Tutorials</a>
-          </li>
-          <li>
-            <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">freeCodeCamp – Interactive Coding
-              Lessons</a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/@WebProgrammingUNPAS" target="_blank" rel="noopener">Web Programming UNPAS
-              (YouTube)</a>
-          </li>
-          <li>
-            <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs – Web Development
-              Documentation</a>
-          </li>
-          <li>
-            <a href="https://www.dicoding.com/" target="_blank" rel="noopener">Dicoding Indonesia – Certified Tech
-              Courses</a>
-          </li>
+    </section>
+
+    <section id="about" class="about-section">
+      <h2 data-aos="fade-up">Vision & Value.</h2>
+      <div class="content-wrapper glassmorphism" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-text">
+          <p>Saya adalah Farhan Nul Hakim, seorang profesional yang bergerak di persimpangan antara Informatika
+            dan Keuangan. Visi saya bukan sekadar membangun antarmuka yang indah, tetapi menciptakan solusi digital
+            yang efisien, terukur, dan berdampak langsung pada kinerja bisnis.</p>
+          <p>Saya percaya, keunggulan sejati terletak pada kemampuan menerjemahkan data keuangan yang kompleks ke dalam
+            arsitektur Front-End yang user-centric, memberikan nilai tambah yang nyata. Saya bukan hanya
+            pengembang; saya adalah jembatan antara teknologi dan tujuan strategis perusahaan.</p>
+          <a href="/doc/farhan_cv.pdf" target="_blank" class="link-detail">Download Executive Profile <i
+              class="fa-solid fa-download"></i></a>
+        </div>
+        
+      </div>
+    </section>
+
+    <section id="branding" class="branding-section">
+      <h2 data-aos="fade-up">My Personal Branding.</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Prinsip-prinsip yang membentuk profesionalisme
+        saya.</p>
+      <div class="branding-grid">
+        <div class="branding-card glassmorphism" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-chart-line"></i>
+          <h3>Data-Driven Design</h3>
+          <p>Menerapkan logika keuangan dan analisis data untuk memvalidasi setiap keputusan UI/UX.</p>
+        </div>
+        <div class="branding-card glassmorphism" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fas fa-handshake"></i>
+          <h3>Integrity & Precision</h3>
+          <p>Keakuratan data, baik dalam coding maupun financial reporting, adalah prioritas non-negotiable.</p>
+        </div>
+        <div class="branding-card glassmorphism" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fas fa-rocket"></i>
+          <h3>Futuristic Execution</h3>
+          <p>Selalu mencari teknologi dan tren terbaru untuk memastikan solusi tetap relevan di masa depan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+      <h2 data-aos="fade-up">Core Skills Matrix.</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Keterampilan teknis dan administrasi yang
+        terintegrasi.</p>
+      <div class="skills-matrix">
+        <div class="skill-category glassmorphism" data-aos="fade-right" data-aos-delay="200">
+          <h3>Front-End Development <i class="fas fa-code"></i></h3>
+          <div class="skill-item">
+            <p>HTML5 & CSS3 (Advanced)</p>
+            <div class="skill-bar">
+              <div style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <p>JavaScript (ES6+)</p>
+            <div class="skill-bar">
+              <div style="width: 75%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <p>UI/UX & Responsiveness</p>
+            <div class="skill-bar">
+              <div style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <p>Git & Deployment</p>
+            <div class="skill-bar">
+              <div style="width: 80%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category glassmorphism" data-aos="fade-left" data-aos-delay="300">
+          <h3>Finance & Administration <i class="fas fa-wallet"></i></h3>
+          <div class="skill-item">
+            <p>Microsoft Excel (Data Analysis)</p>
+            <div class="skill-bar">
+              <div style="width: 95%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <p>Financial Reporting</p>
+            <div class="skill-bar">
+              <div style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <p>Administrative Management</p>
+            <div class="skill-bar">
+              <div style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <p>Data Accuracy & Archiving</p>
+            <div class="skill-bar">
+              <div style="width: 95%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <h2 data-aos="fade-up">Projects & Case Studies.</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Karya terpilih yang menunjukkan kemampuan
+        eksekusi dan visi digital.</p>
+      <div class="projects-grid">
+
+        <div class="project-card glassmorphism" data-aos="flip-up" data-aos-delay="200">
+          <img src="/img/JRSY.png" alt="Jersey Project Preview" class="project-preview-img" />
+          <div class="card-content">
+            <h3>E-Commerce UI/UX Design</h3>
+            <p>Fokus: Clean UI, High Conversion Rate Mockup.</p>
+            <div class="tags"><span class="tag">UI/UX</span><span class="tag">E-commerce</span></div>
+            <a href="https://tokojersey.vercel.app/" target="_blank" class="btn-sm">View Live <i
+                class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card glassmorphism" data-aos="flip-up" data-aos-delay="300">
+          <img src="/img/kulooo.png" alt="KULO Project Preview" class="project-preview-img" />
+          <div class="card-content">
+            <h3>Restaurant Profile (Responsive)</h3>
+            <p>Fokus: Standard Front-End Implementation (HTML/CSS/JS).</p>
+            <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">Responsive</span></div>
+            <a href="https://warkopkulakulo.vercel.app/" target="_blank" class="btn-sm">View Live <i
+                class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card glassmorphism" data-aos="flip-up" data-aos-delay="400">
+          <img src="/img/trv.png" alt="Travel Website Preview" class="project-preview-img" />
+          <div class="card-content">
+            <h3>Travel Agency Landing Page</h3>
+            <p>Fokus: Modern Layout & CSS Animation Practice.</p>
+            <div class="tags"><span class="tag">CSS</span><span class="tag">Landing Page</span></div>
+            <a href="https://effortless-figolla-de9a71.netlify.app/" target="_blank" class="btn-sm">View Live <i
+                class="fa-solid fa-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="experience-section">
+      <h2 data-aos="fade-up">Path & Milestones.</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Jejak pendidikan, pengalaman, dan pengakuan
+        formal.</p>
+
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up">
+          <div class="timeline-dot glassmorphism"></div>
+          <div class="timeline-content glassmorphism">
+            <span class="date">2023 - Present</span>
+            <h3>Informatics Engineering Student</h3>
+            <p>Universitas Pamulang. Fokus pada pengembangan perangkat lunak modern dan struktur data.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-dot glassmorphism"></div>
+          <div class="timeline-content glassmorphism">
+            <span class="date">2024</span>
+            <h3>Web Development Fundamentals</h3>
+            <p>Sertifikasi Dicoding. Menguasai dasar-dasar HTML, CSS, dan JavaScript untuk web development.</p>
+            <a href="/img/dicoding_pages-to-jpg-0001.jpg" target="_blank" class="link-detail">View Certificate</a>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="timeline-dot glassmorphism"></div>
+          <div class="timeline-content glassmorphism">
+            <span class="date">2024</span>
+            <h3>Basic Microsoft Excel Certification</h3>
+            <p>Remote Skills Academy. Keahlian dalam manipulasi data, fungsi, dan pelaporan keuangan dasar.</p>
+            <a href="/img/Farhan Nul Hakim - Certificate of BasicMicrosoftExcel by Remote Skills Academy_page-0001.jpg"
+              target="_blank" class="link-detail">View Certificate</a>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="timeline-dot glassmorphism"></div>
+          <div class="timeline-content glassmorphism">
+            <span class="date">2022</span>
+            <h3>2nd Best Question Award</h3>
+            <p>Pengakuan atas kemampuan analisis kritis dalam Seminar Nasional Literasi Keuangan.</p>
+            <a href="/img/foto2.jpeg" target="_blank" class="link-detail">View Certificate</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2 data-aos="fade-up">Connect to the Future.</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Siap mendiskusikan peluang kolaborasi Anda.
+      </p>
+
+      <div class="contact-grid">
+   
+
+    <div class="contact-info" data-aos="fade-left">
+        <h3>Digital Coordinates</h3>
+        <ul class="contact-list">
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:farhannulhakim782005@gmail.com">Email Me</a></li>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6283806935439" target="_blank">WhatsApp Direct</a></li>
+            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/farhannul-hakim/" target="_blank">LinkedIn Profile</a></li>
         </ul>
-      </div>
-    </section>
 
-    <!-- Section About: galeri aktivitas dan pengalaman -->
-    <section id="about">
-      <h2>About Me</h2> <!-- Judul section About -->
-      <div class="about-gallery">
-        <!-- Setiap .about-photo berisi gambar dan deskripsi -->
-        <div class="about-photo">
-          <img src="/img/foto1.jpeg" alt="Farhan saat kuliah" />
-          <p>Attending the National Financial Literacy Seminar...</p>
+        <div class="social-links-footer">
+            <a href="https://www.linkedin.com/in/farhannul-hakim/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/farhannulhakim7777" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/farhannl_" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        <div class="about-photo">
-          <img src="/img/foto2.jpeg" alt="Farhan ngoding" />
-          <p>Won the 2nd best question award...</p>
-        </div>
-        <div class="about-photo">
-          <img src="/img/foto3.jpeg" alt="Farhan presentasi" />
-          <p>Becoming a referee at the Mini Soccer Competition...</p>
-        </div>
-        <div class="about-photo">
-          <img src="/img/foto4.jpeg" alt="Farhan presentasi" />
-          <p>Has a hobby of playing football...</p>
-        </div>
-        <div class="about-photo">
-          <img src="/img/foto 5.jpeg" alt="Farhan presentasi" />
-          <p>Received a cash award from the supervising lecturer...</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section Project: menampilkan project yang dibuat -->
-    <section id="project1">
-      <h2>Project</h2> <!-- Judul section Project -->
-      <div class="project-list">
-        <!-- Setiap project-item dibungkus dengan <a> agar bisa diklik -->
-        <div class="project-item">
-          <a href="https://contoh-link-kalkulator.com" target="_blank" rel="noopener">
-            <img src="/img/calculator.png" alt="Calculator Project" class="project-img" />
-            <p>Calculator Application With Java.</p>
-          </a>
-        </div>
-        <div class="project-item">
-          <a href="https://tokojersey.vercel.app/" target="_blank" rel="noopener">
-            <img src="/img/JRSY.png" alt="Jersey Project" class="project-img" />
-            <p>Football Jersey Online Store Website</p>
-          </a>
-        </div>
-        <div class="project-item">
-          <a href="https://kulakulo.netlify.app/" target="_blank" rel="noopener">
-            <img src="/img/KULO.png" alt="KULO Restaurant Website" class="project-img" />
-            <p>Website Restaurant.</p>
-          </a>
-        </div>
-        <div class="project-item">
-          <a href="https://effortless-figolla-de9a71.netlify.app/" target="_blank" rel="noopener">
-            <img src="/img/trv.png" alt="Travel Website" class="project-img" />
-            <p>Travel Websites.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="project">
-      <h2>Certificate</h2> <!-- Judul section Project -->
-      <div class="project-list">
-        <!-- Setiap project-item dibungkus dengan <a> agar bisa diklik -->
-        <div class="project-item">
-          <a href="/img/dicoding_pages-to-jpg-0001.jpg" target="_blank">
-            <img src="/img/dicoding_pages-to-jpg-0001.jpg" alt="Sertifikat Dicoding" class="project-img1" />
-          </a>
-        </div>
-        <div class="project-item">
-          <a href="/img/Farhan Nul Hakim - Certificate of BasicMicrosoftExcel by Remote Skills Academy_page-0001.jpg" target="_blank">
-            <img src="/img/Farhan Nul Hakim - Certificate of BasicMicrosoftExcel by Remote Skills Academy_page-0001.jpg"
-              alt="Sertifikat Excel" class="project-img1" />
-          </a>
-        </div>
-        <div class="project-item">
-          <a href="/img/farhan_page-0001.jpg" target="_blank">
-            <img src="/img/farhan_page-0001.jpg" alt="Sertifikat Farhan" class="project-img1" />
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-
-
-    <!-- Section Contact: informasi kontak -->
-    <section id="contact">
-      <h2>Contact</h2> <!-- Judul section Contact -->
-      <ul class="contact-list">
-        <!-- Setiap kontak berisi ikon dan tautan -->
-        <li>
-          <i class="fa-solid fa-envelope"></i>
-          <a href="mailto:farhannulhakim782005@gmail.com">farhannulhakim782005@gmail.com</a>
-        </li>
-        <li>
-          <i class="fab fa-instagram"></i>
-          <a href="https://instagram.com/farhannl_" target="_blank">@farhannl_</a>
-        </li>
-        <li>
-          <i class="fab fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/farhannul-hakim/" target="_blank">LinkedIn Farhan Nul Hakim</a>
-        </li>
-        <li>
-          <i class="fab fa-github"></i>
-          <a href="https://github.com/farhannulhakim7777" target="_blank">GitHub Farhan Nul Hakim</a>
-        </li>
-      </ul>
+    </div>
+</div>
     </section>
   </main>
 
-  <!-- Footer: copyright -->
   <footer>
-    <p>&copy; 2025 Farhan. All rights reserved.</p>
+    <p>&copy; 2025 Farhan Nul Hakim. Executive Digital Portfolio. All rights reserved.</p>
   </footer>
 
-  <!-- Menghubungkan file JavaScript eksternal -->
-  <script src="script.js"></script>
+  <div id="ai-bubble" class="ai-bubble glassmorphism-dark">
+    <i class="fas fa-robot"></i>
+    <p>AI Assistant is online</p>
+  </div>
 
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
