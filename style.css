@@ -983,20 +983,20 @@ body[data-theme="light"] .social-links-footer a {
 @media (max-width: 360px) {
     /* Global Padding */
     main {
-        padding: 0 10px; /* Kurangi padding utama agar ada lebih banyak ruang konten */
+        padding: 0 10px;
     }
 
     /* Navbar/Header */
     .navbar {
-        padding: 15px 10px; /* Kurangi padding Navbar */
+        padding: 15px 10px;
     }
     .logo {
-        font-size: 1.2rem; /* Logo lebih kecil */
+        font-size: 1.2rem;
     }
 
     /* Judul Section (H2) */
     section h2 {
-        font-size: 2rem; /* Judul section dibuat lebih kecil */
+        font-size: 2rem;
     }
     .section-subtitle {
         font-size: 0.9rem;
@@ -1004,33 +1004,62 @@ body[data-theme="light"] .social-links-footer a {
 
     /* Hero Section */
     .hero-content h1 {
-        font-size: 2rem; /* Judul Hero (nama) dibuat sangat kecil */
+        font-size: 2rem;
     }
     .tagline {
         font-size: 0.9rem;
-        padding: 8px; /* Padding tagline dikurangi */
+        padding: 8px;
     }
     .profile-img {
-        width: 120px; /* Foto profil lebih kecil */
+        width: 120px;
         height: 120px;
         margin-bottom: 20px;
     }
     /* Tombol hero sudah diatur di 480px, biarkan saja */
 
-    /* Experience/Timeline */
-    .timeline-item {
-        padding-left: 50px; /* Kurangi sedikit padding untuk konten timeline */
+
+    /* === [REVISI KRITIS: EXPERIENCE/TIMELINE] === */
+
+   .timeline::before {
+        left: 50%; /* Garis vertikal di tengah */
+        margin-left: -1px; /* Koreksi agar garis benar-benar di tengah */
     }
-    .timeline::before {
-        left: 20px; /* Garis timeline geser sedikit ke kiri */
+
+    /* 2. Timeline Item: Atur agar semua item rapi di sisi kiri garis */
+   .timeline-item {
+        width: 50%; /* Tetap 50% untuk Zig-Zag */
+        padding-left: 0; 
+        padding-right: 0;
     }
-    .timeline-dot {
-        left: 13px !important; /* Posisikan dot agar pas di garis baru */
+  .timeline-item:nth-child(even) .timeline-dot {
+        /* Untuk item genap (Kanan) */
+        left: -7.5px !important; /* Dot berada di tepi kiri (menempel ke garis) */
+        right: auto;
     }
-    .timeline-content {
+
+    /* 4. Timeline Content: Konten Rapi dan Minimal */
+  .timeline-content {
         padding: 8px; /* Padding kotak konten dibuat lebih minimal */
         font-size: 0.9rem;
+        /* Hapus max-width eksplisit jika sudah diatur oleh width: 50% parent */
     }
+    .timeline-dot {
+        /* Untuk item ganjil (Kiri) */
+        left: auto !important;
+        right: -7.5px; /* Dot berada di tepi kanan (menempel ke garis) */
+    }
+    .timeline-item:nth-child(even) {
+        left: 50%; /* Pindah ke sisi kanan garis tengah */
+        padding-left: 15px; /* Jarak antara garis dan card */
+        text-align: left;
+    }
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        padding-right: 15px; /* Jarak antara card dan garis */
+        text-align: right;
+    }
+
+}
     
     /* Contact Form & Info */
     .contact-form,
