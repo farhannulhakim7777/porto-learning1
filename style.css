@@ -1,6 +1,6 @@
 /* ==========================================================
-   PORTFOLIO - Futuristik Eksekutif Style 2025
-   Author: Farhan Nul Hakim (cleaned & organized)
+   PORTFOLIO - Futuristik Eksekutif Style 2026
+   Author: Farhan Nul Hakim (Full Refined Version)
 ============================================================ */
 
 /* 1. ROOT VARIABLES & THEME */
@@ -54,6 +54,7 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden; /* Mencegah horizontal scroll di mobile */
 }
 
 /* ────────────────────────────────────────────────
@@ -74,22 +75,22 @@ section:nth-child(even) {
   border-radius: 50px;
 }
 
-/* Headings */
+/* Headings - CENTERED */
 section h2 {
   font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-main);
-  text-align: left;
+  text-align: center; /* Teks ke tengah */
 }
 
 section h2::after {
   content: '';
   display: block;
-  width: 40px;
+  width: 50px;
   height: 4px;
   background: var(--accent);
-  margin: 12px 0 20px;
+  margin: 12px auto 20px; /* Garis ke tengah */
   border-radius: 2px;
 }
 
@@ -98,7 +99,9 @@ section h2::after {
   color: var(--text-muted);
   margin-bottom: 60px;
   max-width: 600px;
-  text-align: left;
+  text-align: center; /* Teks ke tengah */
+  margin-left: auto;  /* Container ke tengah */
+  margin-right: auto; /* Container ke tengah */
 }
 
 /* Glassmorphism Base */
@@ -155,7 +158,7 @@ section h2::after {
 }
 
 /* ────────────────────────────────────────────────
-   5. NAVIGATION
+   5. NAVIGATION & HAMBURGER
 ───────────────────────────────────────────────── */
 .navbar {
   position: sticky;
@@ -209,6 +212,26 @@ nav a.active {
   color: var(--text-main);
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+/* Nav Toggle (Hamburger) */
+.nav-toggle {
+  display: none; /* Sembunyi di desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
 /* ────────────────────────────────────────────────
@@ -291,6 +314,7 @@ nav a.active {
   background: var(--bg-primary);
   border: 1px solid var(--glass-border);
   transition: all 0.3s ease;
+  text-align: center; /* Konten card ke tengah */
 }
 
 .branding-card:hover {
@@ -314,6 +338,7 @@ nav a.active {
 .skill-category {
   padding: 30px;
   background: var(--bg-primary);
+  border-radius: 20px;
 }
 
 .skill-bar {
@@ -375,14 +400,47 @@ nav a.active {
 /* ────────────────────────────────────────────────
    9. TIMELINE
 ───────────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .timeline::before {
+  content: '';
+  position: absolute;
   left: 50%;
+  width: 2px;
+  height: 100%;
   background: var(--glass-border);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  position: relative;
+  width: 50%;
+  padding: 0 30px;
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: 50%;
 }
 
 .timeline-dot {
+  position: absolute;
+  right: -10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
   background: var(--bg-primary);
   border: 4px solid var(--accent);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -10px;
 }
 
 .timeline-content {
@@ -390,19 +448,28 @@ nav a.active {
   border: 1px solid var(--glass-border);
   padding: 25px;
   border-radius: 16px;
+  box-shadow: var(--shadow-soft);
 }
 
 /* ────────────────────────────────────────────────
    10. CONTACT & FOOTER
 ───────────────────────────────────────────────── */
+.contact-list {
+  list-style: none;
+}
+
 .contact-list li {
   margin-bottom: 16px;
 }
 
-.social-links-footer {
-  margin-top: 24px;
-  display: flex;
-  gap: 20px;
+.contact-list a {
+  text-decoration: none;
+  color: var(--text-main);
+  transition: 0.3s;
+}
+
+.contact-list a:hover {
+  color: var(--accent);
 }
 
 footer {
@@ -419,18 +486,46 @@ footer {
   .hero-content h1 { font-size: 3.5rem; }
   .branding-grid { grid-template-columns: 1fr; }
   .content-wrapper { flex-direction: column; gap: 40px; }
+  
+  /* Mobile Menu Logic */
+  .nav-toggle { display: flex; } /* Tampilkan hamburger */
+  
+  nav ul {
+    display: none; /* Sembunyikan default menu */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: var(--bg-primary);
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    border-bottom: 1px solid var(--glass-border);
+  }
+  
+  nav ul.nav-open {
+    display: flex; /* Tampil saat JS toggle aktif */
+  }
+
+  .nav-toggle.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+  .nav-toggle.active .bar:nth-child(2) { opacity: 0; }
+  .nav-toggle.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
 }
 
 @media (max-width: 768px) {
-  nav ul { display: none; }
   .skills-matrix { grid-template-columns: 1fr; }
   
+  /* Timeline Mobile */
   .timeline::before { left: 20px; }
   .timeline-item {
     width: 100%;
     padding-left: 45px !important;
+    padding-right: 0;
+    margin-left: 0 !important;
   }
-  .timeline-dot { left: 12px !important; }
+  .timeline-dot { left: 10px !important; }
 }
 
 @media (max-width: 480px) {
