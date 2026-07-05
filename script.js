@@ -1,8 +1,8 @@
 if (typeof AOS !== 'undefined') {
   AOS.init({
-    duration: 800, // Durasi animasi dalam ms
-    once: true, // Animasi hanya berjalan sekali
-    offset: 100 // Offset (jarak dari bawah) sebelum animasi dimulai
+    duration: 800,
+    once: true,
+    offset: 100
   })
 }
 
@@ -10,9 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle')
   const navUl = document.querySelector('nav ul')
   const navLinks = document.querySelectorAll('nav ul li a')
-
   const body = document.body
-  const themeToggle = document.getElementById('theme-toggle') // ID target
+  const themeToggle = document.getElementById('theme-toggle')
 
   // Fungsi untuk mengubah tema
   const setTheme = theme => {
@@ -20,22 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const icon = theme === 'dark' ? 'fa-sun' : 'fa-moon'
     themeToggle.querySelector('i').className = `fas ${icon}`
     localStorage.setItem('theme', theme)
-
-    // Tambahkan di dalam DOMContentLoaded
-    window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar')
-      if (window.scrollY > 50) {
-        navbar.style.padding = '12px 40px'
-        navbar.style.background = 'var(--bg-primary)'
-        navbar.style.boxShadow = 'var(--soft-shadow)'
-      } else {
-        navbar.style.padding = '18px 40px'
-        navbar.style.boxShadow = 'none'
-      }
-    })
   }
 
-  // ... (Logika deteksi tema tersimpan)
+  // Deteksi tema tersimpan atau gunakan light sebagai default
+  const savedTheme = localStorage.getItem('theme')
+  if (savedTheme) {
+    setTheme(savedTheme)
+  } else {
+    setTheme('light')
+  }
 
   // Listener tombol tema
   themeToggle.addEventListener('click', () => {
@@ -44,7 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
     setTheme(newTheme)
   })
 
-  // Toggle Navbar Menu: Menampilkan/menyembunyikan menu dan mengubah ikon hamburger
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar')
+    if (window.scrollY > 50) {
+      navbar.style.padding = '16px 48px'
+      navbar.style.background = 'var(--glass-bg)'
+      navbar.style.boxShadow = 'var(--shadow-lg)'
+    } else {
+      navbar.style.padding = '20px 48px'
+      navbar.style.boxShadow = 'none'
+    }
+  })
+
+  // Toggle Navbar Menu
   if (navToggle && navUl) {
     navToggle.addEventListener('click', () => {
       navUl.classList.toggle('nav-open')
