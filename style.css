@@ -5,13 +5,13 @@
 
 /* 1. ROOT VARIABLES & THEME */
 :root {
-  /* Premium Light Color Palette */
-  --bg-primary: #fafafa;
-  --bg-secondary: #ffffff;
-  --bg-accent: #f0f4f8;
-  --text-main: #1a1a2e;
-  --text-muted: #6b7280;
-  --text-light: #9ca3af;
+  /* Elegant Light Color Palette */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-accent: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-light: #94a3b8;
   
   /* Accent Colors */
   --accent: #2563eb;
@@ -24,16 +24,16 @@
   --info: #06b6d4;
   
   /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   
   /* Premium Shadows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.08);
-  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
-  --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.07);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.09);
+  --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
   
   /* Typography */
   --font-primary: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -41,23 +41,6 @@
   /* Spacing */
   --section-spacing: 120px;
   --container-width: 1280px;
-}
-
-body[data-theme='dark'] {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-accent: #1e293b;
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --text-light: #64748b;
-  --glass-bg: rgba(15, 23, 42, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.5);
-  --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
 }
 
 /* ────────────────────────────────────────────────
@@ -122,10 +105,6 @@ section h2 {
   color: var(--text-main);
   text-align: center;
   margin-bottom: 16px;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 section h2::after {
@@ -133,7 +112,7 @@ section h2::after {
   display: block;
   width: 80px;
   height: 4px;
-  background: var(--accent-gradient);
+  background: var(--accent);
   margin: 20px auto 32px;
   border-radius: 2px;
 }
@@ -323,14 +302,6 @@ nav a.cta-link:hover {
   gap: 15px;
 }
 
-.icon-btn {
-  background: none;
-  border: none;
-  color: var(--text-main);
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
 /* Nav Toggle (Hamburger) */
 .nav-toggle {
   display: none;
@@ -401,11 +372,7 @@ nav a.cta-link:hover {
   font-weight: 900;
   line-height: 1.05;
   letter-spacing: -0.04em;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: #000000;
   margin-bottom: 24px;
   opacity: 0;
   animation: fadeInUp 0.8s ease 0.2s forwards;
@@ -701,55 +668,106 @@ nav a.cta-link:hover {
   -webkit-text-fill-color: transparent;
 }
 
-.skill-item {
-  margin-bottom: 1.5rem;
-}
-
-.skill-item p {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-main);
-  margin-bottom: 10px;
+.skill-list {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.skill-item p span {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.skill-bar {
-  height: 10px;
+.skill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
   background: var(--bg-accent);
-  border-radius: 10px;
-  margin-top: 8px;
-  overflow: hidden;
-  position: relative;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.skill-bar div {
-  height: 100%;
-  background: var(--accent-gradient);
-  border-radius: 10px;
-  position: relative;
-  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+.skill-item:hover {
+  transform: translateX(8px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
 }
 
-.skill-bar div::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  animation: shimmer 2s infinite;
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--bg-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+/* Brand Colors for Icons */
+.skill-item:nth-child(1) .skill-icon {
+  color: #E34F26;
+  background: rgba(227, 79, 38, 0.1);
+}
+
+.skill-item:nth-child(2) .skill-icon {
+  color: #F7DF1E;
+  background: rgba(247, 223, 30, 0.1);
+}
+
+.skill-item:nth-child(3) .skill-icon {
+  color: #2563EB;
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.skill-item:nth-child(4) .skill-icon {
+  color: #F05032;
+  background: rgba(240, 80, 50, 0.1);
+}
+
+.skill-item:hover .skill-icon {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+/* Finance & Admin Skills Colors */
+.skill-category:nth-child(2) .skill-item:nth-child(1) .skill-icon {
+  color: #217346;
+  background: rgba(33, 115, 70, 0.1);
+}
+
+.skill-category:nth-child(2) .skill-item:nth-child(2) .skill-icon {
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.skill-category:nth-child(2) .skill-item:nth-child(3) .skill-icon {
+  color: #F59E0B;
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.skill-category:nth-child(2) .skill-item:nth-child(4) .skill-icon {
+  color: #6366F1;
+  background: rgba(99, 102, 241, 0.1);
+}
+
+.skill-content {
+  flex: 1;
+}
+
+.skill-content h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.skill-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ────────────────────────────────────────────────

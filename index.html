@@ -13,14 +13,11 @@
   <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 </head>
 
-<body data-theme="light">
+<body>
 
   <nav class="navbar">
     <a href="#hero" class="logo">FARHAN.</a>
     <div class="nav-controls">
-      <button id="theme-toggle" class="icon-btn" aria-label="Ubah mode gelap/terang">
-        <i class="fas fa-moon"></i>
-      </button>
       <button class="nav-toggle" aria-label="Buka/tutup navigasi">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -74,7 +71,7 @@
             Saya berfokus pada pengelolaan piutang, pencatatan keuangan, dan laporan penjualan.
           </p>
 
-          <a href="/img/cvfarhanTerbaru.pdf" target="_blank" class="link-detail">Unduh Profil Eksekutif <i
+          <a href="/img/FARHANNULHAKIM_CV.pdf" target="_blank" class="link-detail" onclick="openAndDownloadCV(event)">Unduh CV <i
               class="fa-solid fa-download"></i></a>
         </div>
 
@@ -137,56 +134,68 @@
       <div class="skills-matrix">
         <div class="skill-category glassmorphism" data-aos="fade-right" data-aos-delay="200">
           <h3>Pengembangan Front-End <i class="fas fa-code"></i></h3>
-          <div class="skill-item">
-            <p>HTML5 & CSS3 (Lanjutan)</p>
-            <div class="skill-bar">
-              <div style="width: 90%;"></div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fab fa-html5"></i></div>
+              <div class="skill-content">
+                <h4>HTML5 & CSS3</h4>
+                <p>Struktur semantik, layout modern, dan animasi CSS lanjutan</p>
+              </div>
             </div>
-          </div>
-          <div class="skill-item">
-            <p>JavaScript (ES6+)</p>
-            <div class="skill-bar">
-              <div style="width: 75%;"></div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fab fa-js"></i></div>
+              <div class="skill-content">
+                <h4>JavaScript (ES6+)</h4>
+                <p>DOM manipulation, async/await, dan modern JavaScript patterns</p>
+              </div>
             </div>
-          </div>
-          <div class="skill-item">
-            <p>Desain Antarmuka & Responsivitas</p>
-            <div class="skill-bar">
-              <div style="width: 85%;"></div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fas fa-palette"></i></div>
+              <div class="skill-content">
+                <h4>Desain Antarmuka & Responsivitas</h4>
+                <p>Mobile-first design, grid layouts, dan cross-browser compatibility</p>
+              </div>
             </div>
-          </div>
-          <div class="skill-item">
-            <p>Kontrol Versi & Penyebaran</p>
-            <div class="skill-bar">
-              <div style="width: 80%;"></div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+              <div class="skill-content">
+                <h4>Kontrol Versi & Penyebaran</h4>
+                <p>Git workflow, GitHub, dan deployment ke Vercel/Netlify</p>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="skill-category glassmorphism" data-aos="fade-left" data-aos-delay="300">
           <h3>Keuangan & Administrasi <i class="fas fa-wallet"></i></h3>
-          <div class="skill-item">
-            <p>Microsoft Excel (Analisis Data)</p>
-            <div class="skill-bar">
-              <div style="width: 95%;"></div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
+              <div class="skill-content">
+                <h4>Microsoft Excel</h4>
+                <p>Analisis data lanjutan, pivot tables, dan financial modeling</p>
+              </div>
             </div>
-          </div>
-          <div class="skill-item">
-            <p>Pelaporan Keuangan</p>
-            <div class="skill-bar">
-              <div style="width: 85%;"></div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="skill-content">
+                <h4>Pelaporan Keuangan</h4>
+                <p>Financial statements, budgeting, dan cash flow management</p>
+              </div>
             </div>
-          </div>
-          <div class="skill-item">
-            <p>Manajemen Administrasi</p>
-            <div class="skill-bar">
-              <div style="width: 90%;"></div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fas fa-folder-open"></i></div>
+              <div class="skill-content">
+                <h4>Manajemen Administrasi</h4>
+                <p>Dokumentasi sistematis, filing digital, dan process optimization</p>
+              </div>
             </div>
-          </div>
-          <div class="skill-item">
-            <p>Keakuratan Data & Pengarsipan</p>
-            <div class="skill-bar">
-              <div style="width: 95%;"></div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="fas fa-database"></i></div>
+              <div class="skill-content">
+                <h4>Keakuratan Data & Pengarsipan</h4>
+                <p>Data entry presisi, record keeping, dan audit trail maintenance</p>
+              </div>
             </div>
           </div>
         </div>

@@ -10,31 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle')
   const navUl = document.querySelector('nav ul')
   const navLinks = document.querySelectorAll('nav ul li a')
-  const body = document.body
-  const themeToggle = document.getElementById('theme-toggle')
-
-  // Fungsi untuk mengubah tema
-  const setTheme = theme => {
-    body.setAttribute('data-theme', theme)
-    const icon = theme === 'dark' ? 'fa-sun' : 'fa-moon'
-    themeToggle.querySelector('i').className = `fas ${icon}`
-    localStorage.setItem('theme', theme)
-  }
-
-  // Deteksi tema tersimpan atau gunakan light sebagai default
-  const savedTheme = localStorage.getItem('theme')
-  if (savedTheme) {
-    setTheme(savedTheme)
-  } else {
-    setTheme('light')
-  }
-
-  // Listener tombol tema
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-theme')
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-  })
 
   // Navbar scroll effect
   window.addEventListener('scroll', () => {
@@ -66,3 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 })
+
+// Function to open CV in new tab and trigger download
+function openAndDownloadCV(event) {
+  event.preventDefault()
+  const cvUrl = event.currentTarget.getAttribute('href')
+  
+  // Open in new tab
+  window.open(cvUrl, '_blank')
+  
+  // Trigger download after a small delay
+  setTimeout(() => {
+    const link = document.createElement('a')
+    link.href = cvUrl
+    link.download = 'FARHANNULHAKIM_CV.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }, 500)
+}
