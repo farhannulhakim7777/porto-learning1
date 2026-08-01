@@ -4,361 +4,689 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Farhan Nul Hakim | Premium Portfolio 2025</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Farhan Nul Hakim — Finance & Front-End Developer</title>
+  <meta name="description"
+    content="Portofolio Farhan Nul Hakim. Junior Finance Staff, Marketing Administration, dan Front-End Developer berbasis di Indonesia." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <a href="#hero" class="logo">FARHAN.</a>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="logo">FNH<span>.</span></a>
     <div class="nav-controls">
-      <button class="nav-toggle" aria-label="Buka/tutup navigasi">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </button>
     </div>
-    <ul>
-      <li><a href="#hero">Beranda</a></li>
-      <li><a href="#branding">Identitas</a></li>
-      <li><a href="#skills">Keterampilan</a></li>
+    <ul id="navMenu">
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#branding">Nilai</a></li>
+      <li><a href="#skills">Skill</a></li>
       <li><a href="#projects">Proyek</a></li>
-      <li><a href="#experience">Pengalaman</a></li>
-      <li><a href="#contact" class="cta-link">Hubungi</a></li>
+      <li><a href="#experience">Jejak</a></li>
+      <li><a href="#contact" class="cta-nav">Hubungi</a></li>
     </ul>
   </nav>
 
   <main>
-    <section id="hero" class="hero-section full-height">
-      <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
-        <img src="/img/1758025576822.jpg" alt="Foto Profil Farhan Nul Hakim" class="profile-img glassmorphism" />
-        <p class="greeting"></p>
-        <h1>FARHAN NUL HAKIM.</h1>
-        <p class="tagline glassmorphism">
-          Finance, Marketing Admin & Junior Front-End Developer
-          Spesialis.
-        </p>
 
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">HUBUNGI SAYA <i class="fa-solid fa-arrow-right"></i></a>
-          <a href="#projects" class="btn btn-secondary">LIHAT PROYEK</a>
-        </div>
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section id="hero" class="hero-section">
 
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/farhannul-hakim/" target="_blank"
-            aria-label="LinkedIn (buka di tab baru)"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/farhannulhakim7777" target="_blank" aria-label="GitHub (buka di tab baru)"><i
-              class="fab fa-github"></i></a>
-          <a href="https://instagram.com/farhannl_" target="_blank" aria-label="Instagram (buka di tab baru)"><i
-              class="fab fa-instagram"></i></a>
-        </div>
+      <div class="hero-meta">
+        <span class="hero-meta-label">Portofolio 2025</span>
+        <div class="hero-meta-line"></div>
       </div>
-    </section>
 
-    <section id="about" class="about-section">
-      <h2 data-aos="fade-up">Visi & Nilai.</h2>
-      <div class="content-wrapper glassmorphism" data-aos="fade-up" data-aos-delay="200">
-        <div class="about-text">
+      <h1 class="hero-name">
+        <span class="outline-text">FARHAN</span>
+        NUL <em>HAKIM</em>
+      </h1>
+
+      <div class="hero-bottom">
+        <div class="hero-bio">
           <p>
-            Saya Farhan Nul Hakim, seorang Junior Finance Staff yang menangani Account Receivable serta Marketing
-            Administration.
-            Saya berfokus pada pengelolaan piutang, pencatatan keuangan, dan laporan penjualan.
+            <strong>Finance Staff · Marketing Admin · Front-End Dev.</strong><br>
+            Saya menggabungkan ketelitian finansial dengan kepekaan digital —
+            dari pengelolaan piutang hingga membangun antarmuka web yang bersih dan fungsional.
           </p>
-
-          <a href="/img/FARHANNULHAKIM_CV.pdf" target="_blank" class="link-detail" onclick="openAndDownloadCV(event)">Unduh CV <i
-              class="fa-solid fa-download"></i></a>
+          <div class="hero-actions" style="margin-top: 28px;">
+            <a href="#contact" class="btn-primary">
+              Hubungi Saya <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#projects" class="btn-outline">
+              Lihat Proyek
+            </a>
+          </div>
         </div>
 
+        <div class="hero-right">
+          <div class="profile-img-wrap">
+            <img src="/img/1758025576822.jpg" alt="Farhan Nul Hakim" class="profile-img" />
+            <div class="profile-img-border"></div>
+            <div class="profile-img-glow"></div>
+          </div>
+          <div class="hero-socials" style="display:flex;gap:10px;">
+            <a href="https://www.linkedin.com/in/farhannul-hakim/" target="_blank" class="social-icon-btn"
+              aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/farhannulhakim7777" target="_blank" class="social-icon-btn" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://instagram.com/farhannl_" target="_blank" class="social-icon-btn" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
       </div>
+
+      <div class="hero-scroll-hint">
+        <div class="scroll-line"></div>
+        <span>scroll</span>
+      </div>
+
     </section>
 
-    <section id="branding" class="branding-section">
-  <h2 data-aos="fade-up">Citra Pribadi.</h2>
-  <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-    Nilai kerja yang saya pegang dalam menjalani peran profesional.
-  </p>
-
-  <div class="branding-grid">
-
-    <div class="branding-card cp-card accent-1" data-aos="fade-up" data-aos-delay="200">
-      <p class="cp-num">01</p>
-      <div class="cp-icon-wrap">
-        <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-          <polyline points="1,12 5,7 8,9 11,4 15,6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <h3>Pendekatan Berbasis Data</h3>
-      <p>Data dan angka jadi landasan setiap keputusan — dari pengelolaan keuangan sampai administrasi operasional.</p>
-      <span class="cp-tag">Analitik</span>
+    <div class="full-divider">
+      <div class="full-divider-line"></div>
     </div>
 
-    <div class="branding-card cp-card accent-2" data-aos="fade-up" data-aos-delay="300">
-      <p class="cp-num">02</p>
-      <div class="cp-icon-wrap">
-        <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-          <path d="M8 1L9.5 6H14L10.5 9L12 14L8 11L4 14L5.5 9L2 6H6.5L8 1Z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
-        </svg>
+    <!-- ══════════════════════════════════════
+         ABOUT
+    ══════════════════════════════════════ -->
+    <section id="about">
+      <div class="section-inner">
+
+        <div class="about-left reveal">
+          <p class="section-label" data-num="01">Tentang Saya</p>
+          <h2 class="section-title">Visi &<br><span class="muted">Latar Belakang</span></h2>
+          <p class="about-desc">
+            Saya Farhan Nul Hakim, mahasiswa <strong>Teknik Informatika di Universitas Pamulang</strong>
+            yang secara aktif bekerja sebagai Junior Finance Staff — menangani Account Receivable,
+            administrasi marketing, dan pelaporan keuangan dengan presisi data.
+            <br><br>
+            Sisi lainnya: saya membangun antarmuka web yang bersih dan responsif.
+            Dua dunia yang berbeda, satu pendekatan yang sama — detail matters.
+          </p>
+          <a href="/img/FARHANNULHAKIM_CV.pdf" target="_blank" class="cv-link" onclick="openAndDownloadCV(event)">
+            Unduh CV <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+
+        <div class="about-right reveal reveal-delay-2">
+          <div class="stat-block">
+            <div class="stat-num">3<span>+</span></div>
+            <div class="stat-label">Tahun Belajar</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-num">6<span>+</span></div>
+            <div class="stat-label">Proyek Selesai</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-num">2<span>×</span></div>
+            <div class="stat-label">Sertifikasi</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Rasa Penasaran</div>
+          </div>
+        </div>
+
       </div>
-      <h3>Integritas & Ketelitian</h3>
-      <p>Keakuratan data dan kerapihan administrasi bukan sekadar standar — itu bentuk tanggung jawab saya.</p>
-      <span class="cp-tag">Kepercayaan</span>
+    </section>
+
+    <div class="full-divider">
+      <div class="full-divider-line"></div>
     </div>
 
-    <div class="branding-card cp-card accent-3" data-aos="fade-up" data-aos-delay="400">
-      <p class="cp-num">03</p>
-      <div class="cp-icon-wrap">
-        <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-          <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M8 5v3.5l2.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
+    <!-- ══════════════════════════════════════
+         BRANDING / IDENTITY
+    ══════════════════════════════════════ -->
+    <section id="branding">
+      <div class="section-inner">
+
+        <div class="branding-header reveal">
+          <div>
+            <p class="section-label" data-num="02">Citra Pribadi</p>
+            <h2 class="section-title">Nilai yang<br><span class="muted">Saya Pegang</span></h2>
+          </div>
+          <p class="branding-header-right">
+            Prinsip kerja yang membentuk cara saya
+            mendekati setiap tugas, dari angka hingga kode.
+          </p>
+        </div>
+
+        <div class="branding-cards">
+
+          <div class="brand-card reveal reveal-delay-1">
+            <span class="brand-card-num">01</span>
+            <h3>Pendekatan Berbasis Data</h3>
+            <p>Data dan angka jadi landasan setiap keputusan — dari pengelolaan keuangan sampai administrasi
+              operasional. Saya tidak berasumsi; saya membaca datanya.</p>
+            <span class="brand-tag">Analitik</span>
+          </div>
+
+          <div class="brand-card reveal reveal-delay-2">
+            <span class="brand-card-num">02</span>
+            <h3>Integritas & Ketelitian</h3>
+            <p>Keakuratan data dan kerapihan administrasi bukan sekadar standar — itu bentuk tanggung jawab saya
+              terhadap tim dan klien.</p>
+            <span class="brand-tag">Kepercayaan</span>
+          </div>
+
+          <div class="brand-card reveal reveal-delay-3">
+            <span class="brand-card-num">03</span>
+            <h3>Terbuka untuk Berkembang</h3>
+            <p>Saya selalu menyesuaikan diri dengan tools dan sistem baru agar tetap relevan — karena teknologi tidak
+              pernah berhenti, dan saya pun begitu.</p>
+            <span class="brand-tag">Growth Mindset</span>
+          </div>
+
+        </div>
       </div>
-      <h3>Terbuka untuk Berkembang</h3>
-      <p>Selalu menyesuaikan diri dengan tools, sistem, dan cara kerja baru agar tetap relevan dan efektif.</p>
-      <span class="cp-tag">Growth mindset</span>
+    </section>
+
+    <div class="full-divider">
+      <div class="full-divider-line"></div>
     </div>
 
-  </div>
-</section>
+    <!-- ══════════════════════════════════════
+         SKILLS
+    ══════════════════════════════════════ -->
+    <section id="skills">
+      <div class="section-inner">
 
-
-    <section id="skills" class="skills-section">
-      <h2 data-aos="fade-up">Matriks Keterampilan Inti.</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Keterampilan teknis dan administrasi yang
-        terintegrasi.</p>
-      <div class="skills-matrix">
-        <div class="skill-category glassmorphism" data-aos="fade-right" data-aos-delay="200">
-          <h3>Pengembangan Front-End <i class="fas fa-code"></i></h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-icon"><i class="fab fa-html5"></i></div>
-              <div class="skill-content">
-                <h4>HTML5 & CSS3</h4>
-                <p>Struktur semantik, layout modern, dan animasi CSS lanjutan</p>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon"><i class="fab fa-js"></i></div>
-              <div class="skill-content">
-                <h4>JavaScript (ES6+)</h4>
-                <p>DOM manipulation, async/await, dan modern JavaScript patterns</p>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon"><i class="fas fa-palette"></i></div>
-              <div class="skill-content">
-                <h4>Desain Antarmuka & Responsivitas</h4>
-                <p>Mobile-first design, grid layouts, dan cross-browser compatibility</p>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-              <div class="skill-content">
-                <h4>Kontrol Versi & Penyebaran</h4>
-                <p>Git workflow, GitHub, dan deployment ke Vercel/Netlify</p>
-              </div>
-            </div>
-          </div>
+        <div class="reveal">
+          <p class="section-label" data-num="03">Keterampilan</p>
+          <h2 class="section-title">Stack &<br><span class="muted">Keahlian</span></h2>
         </div>
 
-        <div class="skill-category glassmorphism" data-aos="fade-left" data-aos-delay="300">
-          <h3>Keuangan & Administrasi <i class="fas fa-wallet"></i></h3>
-          <div class="skill-list">
-            <div class="skill-item">
-              <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
-              <div class="skill-content">
-                <h4>Microsoft Excel</h4>
-                <p>Analisis data lanjutan, pivot tables, dan financial modeling</p>
+        <div class="skills-layout">
+
+          <div class="skills-left reveal reveal-delay-1">
+            <p class="skills-desc">
+              Kombinasi keahlian teknis dan administrasi yang saling melengkapi —
+              dari baris kode hingga baris spreadsheet.
+            </p>
+            <div class="skills-tabs">
+              <button class="skill-tab active" data-panel="frontend">Front-End</button>
+              <button class="skill-tab" data-panel="finance">Finance & Admin</button>
+            </div>
+          </div>
+
+          <div class="skills-right reveal reveal-delay-2">
+
+            <!-- Panel: Front-End -->
+            <div class="skills-panel active" id="panel-frontend">
+              <div class="skill-row">
+                <div class="skill-row-icon icon-html"><i class="fab fa-html5"></i></div>
+                <div class="skill-row-info">
+                  <div class="skill-row-name">HTML5 & CSS3</div>
+                  <div class="skill-row-desc">Struktur semantik, layout modern, animasi CSS</div>
+                </div>
+                <span class="skill-row-level">Menengah</span>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-icon icon-js"><i class="fab fa-js"></i></div>
+                <div class="skill-row-info">
+                  <div class="skill-row-name">JavaScript ES6+</div>
+                  <div class="skill-row-desc">DOM manipulation, async/await, modern patterns</div>
+                </div>
+                <span class="skill-row-level">Junior</span>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-icon icon-css"><i class="fas fa-palette"></i></div>
+                <div class="skill-row-info">
+                  <div class="skill-row-name">Desain UI & Responsif</div>
+                  <div class="skill-row-desc">Mobile-first, grid, cross-browser</div>
+                </div>
+                <span class="skill-row-level">Menengah</span>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-icon icon-git"><i class="fab fa-git-alt"></i></div>
+                <div class="skill-row-info">
+                  <div class="skill-row-name">Git & Deployment</div>
+                  <div class="skill-row-desc">GitHub, Vercel, Netlify workflow</div>
+                </div>
+                <span class="skill-row-level">Dasar</span>
               </div>
             </div>
-            <div class="skill-item">
-              <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-              <div class="skill-content">
-                <h4>Pelaporan Keuangan</h4>
-                <p>Financial statements, budgeting, dan cash flow management</p>
+
+            <!-- Panel: Finance & Admin -->
+            <div class="skills-panel" id="panel-finance">
+              <div class="skill-row">
+                <div class="skill-row-icon icon-xl"><i class="fas fa-file-excel"></i></div>
+                <div class="skill-row-info">
+                  <div class="skill-row-name">Microsoft Excel</div>
+                  <div class="skill-row-desc">Pivot table, analisis data, financial modeling</div>
+                </div>
+                <span class="skill-row-level">Mahir</span>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-icon icon-fin"><i class="fas fa-chart-line"></i></div>
+                <div class="skill-row-info">
+                  <div class="skill-row-name">Pelaporan Keuangan</div>
+                  <div class="skill-row-desc">Financial statements, budgeting, cash flow</div>
+                </div>
+                <span class="skill-row-level">Menengah</span>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-icon icon-doc"><i class="fas fa-folder-open"></i></div>
+                <div class="skill-row-info">
+                  <div class="skill-row-name">Manajemen Administrasi</div>
+                  <div class="skill-row-desc">Dokumentasi, filing digital, process optimization</div>
+                </div>
+                <span class="skill-row-level">Mahir</span>
+              </div>
+              <div class="skill-row">
+                <div class="skill-row-icon icon-data"><i class="fas fa-database"></i></div>
+                <div class="skill-row-info">
+                  <div class="skill-row-name">Keakuratan Data & AR</div>
+                  <div class="skill-row-desc">Account receivable, data entry, audit trail</div>
+                </div>
+                <span class="skill-row-level">Menengah</span>
               </div>
             </div>
-            <div class="skill-item">
-              <div class="skill-icon"><i class="fas fa-folder-open"></i></div>
-              <div class="skill-content">
-                <h4>Manajemen Administrasi</h4>
-                <p>Dokumentasi sistematis, filing digital, dan process optimization</p>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon"><i class="fas fa-database"></i></div>
-              <div class="skill-content">
-                <h4>Keakuratan Data & Pengarsipan</h4>
-                <p>Data entry presisi, record keeping, dan audit trail maintenance</p>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="projects-section">
-      <h2 data-aos="fade-up">Proyek & Studi Kasus.</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Karya terpilih yang menunjukkan kemampuan
-        eksekusi dan visi digital.</p>
-      <div class="projects-grid">
+    <div class="full-divider">
+      <div class="full-divider-line"></div>
+    </div>
 
-        <div class="project-card glassmorphism" data-aos="flip-up" data-aos-delay="200">
-          <img src="/img/JRSY.png" alt="Pratinjau Desain Jersey" class="project-preview-img" />
-          <div class="card-content">
-            <h3>Toko Jersey (DEMO)</h3>
-            <p>Fokus: Antarmuka bersih, mockup untuk meningkatkan konversi.</p>
-            <div class="tags"><span class="tag">Antarmuka</span><span class="tag">E-niaga</span></div>
-            <a href="https://toko-farhan.vercel.app/" target="_blank" class="btn-sm">Lihat Situs <i
-                class="fa-solid fa-up-right-from-square"></i></a>
-          </div>
+    <!-- ══════════════════════════════════════
+         PROJECTS
+    ══════════════════════════════════════ -->
+    <section id="projects">
+      <div class="projects-header">
+        <div class="reveal">
+          <p class="section-label" data-num="04">Proyek</p>
+          <h2 class="section-title">Karya<br><span class="muted">Terpilih</span></h2>
         </div>
+        <div class="proj-header-right reveal reveal-delay-2">
+          <button class="scroll-btn" id="projPrev" aria-label="Prev"><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="scroll-btn" id="projNext" aria-label="Next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
 
-        <div class="project-card glassmorphism" data-aos="flip-up" data-aos-delay="300">
-          <img src="/img/kulooo.png" alt="Pratinjau Profil Restoran" class="project-preview-img" />
-          <div class="card-content">
-            <h3>Profil Restoran (Responsif)</h3>
-            <p>Fokus: Implementasi Front-End standar (HTML/CSS/JS).</p>
-            <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">Responsif</span></div>
-            <a href="https://warkopkulakulo.vercel.app/" target="_blank" class="btn-sm">Lihat Situs <i
-                class="fa-solid fa-up-right-from-square"></i></a>
-          </div>
-        </div>
+      <div class="projects-track-wrap" id="projectsTrack">
+        <div class="projects-track">
 
-        <div class="project-card glassmorphism" data-aos="flip-up" data-aos-delay="400">
-          <img src="/img/gocce.png" alt="Pratinjau Situs Travel" class="project-preview-img" />
-          <div class="card-content">
-            <h3>Gocce Coffee</h3>
-            <p>Profil Restoran (Responsif)</p>
-            <div class="tags"><span class="tag">CSS</span><span class="tag">Halaman Arahan</span></div>
-            <a href="https://geccekegocce.com/" target="_blank" class="btn-sm">Lihat Situs <i
-                class="fa-solid fa-up-right-from-square"></i></a>
+          <div class="project-card reveal">
+            <div class="project-img-wrap">
+              <img src="/img/JRSY.png" alt="Toko Jersey" class="project-preview-img" />
+              <div class="project-img-overlay">
+                <a href="https://toko-farhan.vercel.app/" target="_blank" class="project-visit">
+                  Buka Situs <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-index">001</span>
+                <div class="project-tags">
+                  <span class="tag">UI</span>
+                  <span class="tag">E-commerce</span>
+                </div>
+              </div>
+              <h3>Toko Jersey</h3>
+              <p>Antarmuka bersih dan mockup produk untuk meningkatkan konversi penjualan jersey.</p>
+            </div>
           </div>
-        </div>
-        <div class="project-card glassmorphism" data-aos="flip-up" data-aos-delay="400">
-          <img src="/img/1997.png" alt="Pratinjau Situs Travel" class="project-preview-img" />
-          <div class="card-content">
-            <h3>The 1997 Coffee</h3>
-            <p>Profil Restoran (Responsif) (DEMO)</p>
-            <div class="tags"><span class="tag">CSS</span><span class="tag">Halaman Arahan</span></div>
-            <a href="https://the1997.vercel.app/" target="_blank" class="btn-sm">Lihat Situs <i
-                class="fa-solid fa-up-right-from-square"></i></a>
+
+          <div class="project-card reveal reveal-delay-1">
+            <div class="project-img-wrap">
+              <img src="/img/kulooo.png" alt="Profil Restoran" class="project-preview-img" />
+              <div class="project-img-overlay">
+                <a href="https://warkopkulakulo.vercel.app/" target="_blank" class="project-visit">
+                  Buka Situs <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-index">002</span>
+                <div class="project-tags">
+                  <span class="tag">HTML/CSS</span>
+                  <span class="tag">Responsif</span>
+                </div>
+              </div>
+              <h3>Profil Restoran</h3>
+              <p>Implementasi Front-End standar dengan layout responsif dan UX yang intuitif.</p>
+            </div>
           </div>
-        </div>
-        <div class="project-card glassmorphism" data-aos="flip-up" data-aos-delay="400">
-          <img src="/img/candela.png" alt="" class="project-preview-img" />
-          <div class="card-content">
-            <h3>Candela Construction</h3>
-            <p>PT CANDELA PRIMA KONSTRUKSI</p>
-            <div class="tags"><span class="tag">CSS</span><span class="tag">Halaman Arahan</span></div>
-            <a href="https://candelakonstruksi.com/" target="_blank" class="btn-sm">Lihat Situs<i
-                class="fa-solid fa-up-right-from-square"></i></a>
+
+          <div class="project-card reveal reveal-delay-2">
+            <div class="project-img-wrap">
+              <img src="/img/gocce.png" alt="Gocce Coffee" class="project-preview-img" />
+              <div class="project-img-overlay">
+                <a href="https://geccekegocce.com/" target="_blank" class="project-visit">
+                  Buka Situs <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-index">003</span>
+                <div class="project-tags">
+                  <span class="tag">CSS</span>
+                  <span class="tag">Landing Page</span>
+                </div>
+              </div>
+              <h3>Gocce Coffee</h3>
+              <p>Landing page kafe premium dengan nuansa elegan dan fokus pada visual produk.</p>
+            </div>
           </div>
-        </div>
-        <div class="project-card glassmorphism" data-aos="flip-up" data-aos-delay="400">
-          <img src="/img/izin.png" alt="" class="project-preview-img" />
-          <div class="card-content">
-            <h3>Izin aja dulu Agency</h3>
-            <p>PT IZIN AJA DULU</p>
-            <div class="tags"><span class="tag">CSS</span><span class="tag">Halaman Arahan</span></div>
-            <a href="https://izinajadulu.com/" target="_blank" class="btn-sm">Lihat Situs<i
-                class="fa-solid fa-up-right-from-square"></i></a>
+
+          <div class="project-card reveal reveal-delay-3">
+            <div class="project-img-wrap">
+              <img src="/img/1997.png" alt="The 1997 Coffee" class="project-preview-img" />
+              <div class="project-img-overlay">
+                <a href="https://the1997.vercel.app/" target="_blank" class="project-visit">
+                  Buka Situs <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-index">004</span>
+                <div class="project-tags">
+                  <span class="tag">CSS</span>
+                  <span class="tag">Landing Page</span>
+                </div>
+              </div>
+              <h3>The 1997 Coffee</h3>
+              <p>Profil restoran responsif dengan estetika vintage dan storytelling brand yang kuat.</p>
+            </div>
           </div>
+
+          <div class="project-card reveal reveal-delay-4">
+            <div class="project-img-wrap">
+              <img src="/img/candela.png" alt="Candela Construction" class="project-preview-img" />
+              <div class="project-img-overlay">
+                <a href="https://candelakonstruksi.com/" target="_blank" class="project-visit">
+                  Buka Situs <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-index">005</span>
+                <div class="project-tags">
+                  <span class="tag">CSS</span>
+                  <span class="tag">Corporate</span>
+                </div>
+              </div>
+              <h3>Candela Construction</h3>
+              <p>Website korporat PT Candela Prima Konstruksi dengan profil perusahaan yang profesional.</p>
+            </div>
+          </div>
+
+          <div class="project-card reveal reveal-delay-4">
+            <div class="project-img-wrap">
+              <img src="/img/izin.png" alt="Izin Aja Dulu Agency" class="project-preview-img" />
+              <div class="project-img-overlay">
+                <a href="https://izinajadulu.com/" target="_blank" class="project-visit">
+                  Buka Situs <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-index">006</span>
+                <div class="project-tags">
+                  <span class="tag">CSS</span>
+                  <span class="tag">Agency</span>
+                </div>
+              </div>
+              <h3>Izin Aja Dulu Agency</h3>
+              <p>Landing page layanan legalitas PT Izin Aja Dulu dengan call-to-action yang jelas.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section id="experience" class="experience-section">
-      <h2 data-aos="fade-up">Jejak & Tonggak.</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Jejak pendidikan, pengalaman, dan pengakuan
-        formal.</p>
+    <div class="full-divider">
+      <div class="full-divider-line"></div>
+    </div>
 
-      <div class="timeline">
-        <div class="timeline-item" data-aos="fade-up">
-          <div class="timeline-dot glassmorphism"></div>
-          <div class="timeline-content glassmorphism">
-            <span class="date">2023 - Sekarang</span>
-            <h3>Mahasiswa Teknik Informatika</h3>
-            <p>Universitas Pamulang. Fokus pada pengembangan perangkat lunak modern dan struktur data.</p>
-          </div>
+    <!-- ══════════════════════════════════════
+         EXPERIENCE / TIMELINE
+    ══════════════════════════════════════ -->
+    <section id="experience">
+      <div class="section-inner">
+
+        <div class="reveal">
+          <p class="section-label" data-num="05">Jejak & Tonggak</p>
+          <h2 class="section-title">Pendidikan &<br><span class="muted">Pencapaian</span></h2>
         </div>
 
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="timeline-dot glassmorphism"></div>
-          <div class="timeline-content glassmorphism">
-            <span class="date">2024</span>
-            <h3>Dasar-dasar Pengembangan Web</h3>
-            <p>Sertifikasi Dicoding. Menguasai dasar-dasar HTML, CSS, dan JavaScript untuk pengembangan web.</p>
-            <a href="/img/dicoding_pages-to-jpg-0001.jpg" target="_blank" class="link-detail">Lihat Sertifikat</a>
-          </div>
-        </div>
+        <div class="timeline">
 
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="timeline-dot glassmorphism"></div>
-          <div class="timeline-content glassmorphism">
-            <span class="date">2025</span>
-            <h3>Sertifikasi Dasar Microsoft Excel</h3>
-            <p>Remote Skills Academy. Keahlian dalam manipulasi data, fungsi, dan pelaporan keuangan dasar.</p>
-            <a href="/img/Farhan Nul Hakim - Certificate of BasicMicrosoftExcel by Remote Skills Academy_page-0001.jpg"
-              target="_blank" class="link-detail">Lihat Sertifikat</a>
+          <div class="timeline-item reveal reveal-delay-1">
+            <div class="timeline-date-col">
+              <div class="timeline-year">2023</div>
+              <span class="timeline-year-sub">— Sekarang</span>
+            </div>
+            <div class="timeline-spine">
+              <div class="timeline-spine-line">
+                <div class="timeline-dot"></div>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <p class="tl-type">Pendidikan</p>
+              <h3>Mahasiswa Teknik Informatika</h3>
+              <p class="tl-place">Universitas Pamulang</p>
+              <p class="tl-desc">Fokus pada pengembangan perangkat lunak modern, struktur data, dan rekayasa perangkat
+                lunak.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-          <div class="timeline-dot glassmorphism"></div>
-          <div class="timeline-content glassmorphism">
-            <span class="date">2025</span>
-            <h3>Juara 2 Pertanyaan Terbaik</h3>
-            <p>Pengakuan atas kemampuan analisis kritis dalam Seminar Nasional Literasi Keuangan.</p>
-            <a href="/img/foto2.jpeg" target="_blank" class="link-detail">Lihat Sertifikat</a>
+          <div class="timeline-item reveal reveal-delay-2">
+            <div class="timeline-date-col">
+              <div class="timeline-year">2024</div>
+              <span class="timeline-year-sub">Sertifikasi</span>
+            </div>
+            <div class="timeline-spine">
+              <div class="timeline-spine-line">
+                <div class="timeline-dot"></div>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <p class="tl-type">Sertifikasi</p>
+              <h3>Dasar-dasar Pengembangan Web</h3>
+              <p class="tl-place">Dicoding Indonesia</p>
+              <p class="tl-desc">Menguasai fundamental HTML, CSS, dan JavaScript untuk pengembangan web modern.</p>
+              <a href="/img/dicoding_pages-to-jpg-0001.jpg" target="_blank" class="tl-cert-link">
+                Lihat Sertifikat <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
+
+          <div class="timeline-item reveal reveal-delay-3">
+            <div class="timeline-date-col">
+              <div class="timeline-year">2025</div>
+              <span class="timeline-year-sub">Sertifikasi</span>
+            </div>
+            <div class="timeline-spine">
+              <div class="timeline-spine-line">
+                <div class="timeline-dot"></div>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <p class="tl-type">Sertifikasi</p>
+              <h3>Dasar Microsoft Excel</h3>
+              <p class="tl-place">Remote Skills Academy</p>
+              <p class="tl-desc">Keahlian dalam manipulasi data, fungsi lanjutan, dan pelaporan keuangan berbasis
+                spreadsheet.</p>
+              <a href="/img/Farhan Nul Hakim - Certificate of BasicMicrosoftExcel by Remote Skills Academy_page-0001.jpg"
+                target="_blank" class="tl-cert-link">
+                Lihat Sertifikat <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal reveal-delay-4">
+            <div class="timeline-date-col">
+              <div class="timeline-year">2025</div>
+              <span class="timeline-year-sub">Prestasi</span>
+            </div>
+            <div class="timeline-spine">
+              <div class="timeline-spine-line">
+                <div class="timeline-dot"></div>
+              </div>
+            </div>
+            <div class="timeline-content">
+              <p class="tl-type">Penghargaan</p>
+              <h3>Juara 2 Pertanyaan Terbaik</h3>
+              <p class="tl-place">Seminar Nasional Literasi Keuangan</p>
+              <p class="tl-desc">Pengakuan atas kemampuan analisis kritis dan pola pikir finansial yang tajam di forum
+                nasional.</p>
+              <a href="/img/foto2.jpeg" target="_blank" class="tl-cert-link">
+                Lihat Dokumentasi <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
-      <h2 data-aos="fade-up">Terhubung ke Masa Depan.</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Siap mendiskusikan peluang kolaborasi Anda.
-      </p>
+    <div class="full-divider">
+      <div class="full-divider-line"></div>
+    </div>
 
-      <div class="contact-grid">
+    <!-- ══════════════════════════════════════
+         CONTACT
+    ══════════════════════════════════════ -->
+    <section id="contact">
+      <div class="section-inner">
 
+        <div class="reveal">
+          <p class="section-label" data-num="06">Kontak</p>
+          <h2 class="section-title">Terhubung<br><span class="muted">ke Masa Depan</span></h2>
+        </div>
 
-        <div class="contact-info" data-aos="fade-left">
-          <h3>Koordinat Digital</h3>
-          <ul class="contact-list">
-            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:farhannulhakim782005@gmail.com">Kirim Email</a>
-            </li>
-            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/6283806935439" target="_blank">WhatsApp
-                Langsung</a></li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/farhannul-hakim/"
-                target="_blank">Profil LinkedIn</a></li>
-          </ul>
+        <div class="contact-layout">
 
-          <div class="social-links-footer">
-            <a href="https://www.linkedin.com/in/farhannul-hakim/" target="_blank"
-              aria-label="LinkedIn (buka di tab baru)"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/farhannulhakim7777" target="_blank" aria-label="GitHub (buka di tab baru)"><i
-                class="fab fa-github"></i></a>
-            <a href="https://instagram.com/farhannl_" target="_blank" aria-label="Instagram (buka di tab baru)"><i
-                class="fab fa-instagram"></i></a>
+          <div class="contact-left reveal reveal-delay-1">
+            <p class="contact-big-text">
+              Siap untuk<br>
+              <em>kolaborasi</em><br>
+              berikutnya?
+            </p>
+            <p class="contact-sub">
+              Terbuka untuk diskusi peluang kerja, freelance, atau sekadar berbagi insight seputar finance dan web.
+            </p>
+            <div class="contact-ctas">
+              <a href="mailto:farhannulhakim782005@gmail.com" class="btn-primary">
+                <i class="fa-solid fa-envelope"></i> Kirim Email
+              </a>
+              <a href="https://wa.me/6283806935439" target="_blank" class="btn-outline">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+            </div>
+            <div class="contact-socials">
+              <a href="https://www.linkedin.com/in/farhannul-hakim/" target="_blank" class="social-icon-btn"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/farhannulhakim7777" target="_blank" class="social-icon-btn"
+                aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://instagram.com/farhannl_" target="_blank" class="social-icon-btn" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
           </div>
+
+          <div class="contact-channels reveal reveal-delay-2">
+            <a href="mailto:farhannulhakim782005@gmail.com" class="contact-channel">
+              <div class="contact-channel-left">
+                <div class="ch-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <div class="ch-name">Email</div>
+                  <div class="ch-handle">farhannulhakim782005@gmail.com</div>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-up-right ch-arrow"></i>
+            </a>
+            <a href="https://wa.me/6283806935439" target="_blank" class="contact-channel">
+              <div class="contact-channel-left">
+                <div class="ch-icon"><i class="fab fa-whatsapp"></i></div>
+                <div>
+                  <div class="ch-name">WhatsApp</div>
+                  <div class="ch-handle">+62 838-0693-5439</div>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-up-right ch-arrow"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/farhannul-hakim/" target="_blank" class="contact-channel">
+              <div class="contact-channel-left">
+                <div class="ch-icon"><i class="fab fa-linkedin"></i></div>
+                <div>
+                  <div class="ch-name">LinkedIn</div>
+                  <div class="ch-handle">farhannul-hakim</div>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-up-right ch-arrow"></i>
+            </a>
+            <a href="https://github.com/farhannulhakim7777" target="_blank" class="contact-channel">
+              <div class="contact-channel-left">
+                <div class="ch-icon"><i class="fab fa-github"></i></div>
+                <div>
+                  <div class="ch-name">GitHub</div>
+                  <div class="ch-handle">farhannulhakim7777</div>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-up-right ch-arrow"></i>
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
+
   </main>
 
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
   <footer>
-    <p>&copy; 2025 Farhan Nul Hakim. Portofolio Premium. Hak cipta dilindungi.</p>
+    <div class="footer-left">
+      <strong>Farhan Nul Hakim</strong> &copy; 2025 — Dibuat dengan presisi.
+    </div>
+    <div class="footer-right">
+      Tangerang Selatan, Indonesia
+    </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js"></script>
+
 </body>
 
 </html>
